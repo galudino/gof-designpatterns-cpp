@@ -1,0 +1,27 @@
+#!/bin/zsh
+
+##
+## Uses CMake to create different build versions
+## of sources specified in the current directory's CMakeLists.txt
+## file.
+##
+
+echo ""
+
+## Remove any previous build folders
+rm -rf ./build/make/Debug/* || true
+rm -rf ./build/make/Release/* || true
+rm -rf ./build/make/RelWithDebInfo/* || true
+rm -rf ./build/make/MinSizeRel/* || true || true
+
+cmake -S ./ -B ./build/make/Debug -DCMAKE_BUILD_TYPE=Debug
+echo ""
+
+cmake -S ./ -B ./build/make/Release -DCMAKE_BUILD_TYPE=Release
+echo ""
+
+cmake -S ./ -B ./build/make/RelWithDebInfo -DCMAKE_BUILD_TYPE=RelWithDebInfo
+echo ""
+
+cmake -S ./ -B ./build/make/MinSizeRel -DCMAKE_BUILD_TYPE=MinSizeRel
+echo ""
