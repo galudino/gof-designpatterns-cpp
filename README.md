@@ -59,6 +59,9 @@ My purpose is to:
     - [`header.hpp`](./src/0_creational_patterns/singleton/header.hpp)
     - [`source.cpp`](./src/0_creational_patterns/singleton/source.cpp)
     - [`main.cpp`](./src/0_creational_patterns/singleton/main.cpp)
+
+[(back to table of contents)](#table-of-contents)
+
 ### [Structural Patterns](./src/1_structural_patterns)
   - [Adapter](./src/1_structural_patterns/adapter)
     - [`header.hpp`](./src/1_structural_patterns/adapter/header.hpp)
@@ -88,6 +91,9 @@ My purpose is to:
     - [`header.hpp`](./src/1_structural_patterns/proxy/header.hpp)
     - [`source.cpp`](./src/1_structural_patterns/proxy/source.cpp)
     - [`main.cpp`](./src/1_structural_patterns/proxy/main.cpp)
+
+[(back to table of contents)](#table-of-contents)
+
 ### [Behavioral Patterns](./src/2_behavioral_patterns)
   - [Chain of Responsibility](./src/2_behavioral_patterns/chain_of_responsibility)
     - [`header.hpp`](./src/2_behavioral_patterns/chain_of_responsibility/header.hpp)
@@ -133,6 +139,9 @@ My purpose is to:
     - [`header.hpp`](./src/2_behavioral_patterns/visitor/header.hpp)
     - [`source.cpp`](./src/2_behavioral_patterns/visitor/source.cpp)
     - [`main.cpp`](./src/2_behavioral_patterns/visitor/main.cpp)
+
+[(back to table of contents)](#table-of-contents)
+
 ### [Foundation Classes](./src/3_foundation_classes)
   - [Iterator](./src/3_foundation_classes/iterator)
     - [`header.hpp`](./src/3_foundation_classes/iterator/header.hpp)
