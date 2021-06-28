@@ -1,5 +1,5 @@
-add_subdirectory("./iterator")
-add_subdirectory("./list")
-add_subdirectory("./list_iterator")
-add_subdirectory("./point")
-add_subdirectory("./rect")
+add_library("foundation-library" "gof_foundation.hpp" "gof_foundation.cpp")
+target_include_directories("foundation-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_executable("foundation-demo" "main.cpp")
+target_link_libraries("foundation-demo" LINK_PUBLIC "foundation-library")

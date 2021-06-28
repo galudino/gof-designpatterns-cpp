@@ -6,7 +6,7 @@
     \date
  */
 
-#include "header.hpp"
+#include "gof_foundation.hpp"
 
 /*!
     \param[in]  argc    Command line argument count
@@ -14,7 +14,4 @@
 
     \return     0 on success, non-zero on failure
  */
-int main(int argc, const char *argv[]) {
-    say_hello();
-    return 0;
-}
+int main(int argc, const char *argv[]) { return 0; }
