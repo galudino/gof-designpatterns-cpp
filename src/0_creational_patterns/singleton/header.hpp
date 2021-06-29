@@ -9,6 +9,15 @@
 #ifndef HEADER_HPP
 #define HEADER_HPP
 
-void say_hello(void);
+class MazeFactory {
+public:
+    static MazeFactory *Instance();
+    // existing interface goes here
+protected:
+    MazeFactory();
+
+private:
+    static MazeFactory *_instance;
+};
 
 #endif /* HEADER_HPP */
