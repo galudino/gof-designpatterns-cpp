@@ -15,6 +15,5 @@
     \return     0 on success, non-zero on failure
  */
 int main(int argc, const char *argv[]) {
-    say_hello();
     return 0;
 }
