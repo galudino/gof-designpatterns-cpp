@@ -6,8 +6,19 @@
     \date
  */
 
+#include "header.hpp"
 #include <iostream>
 
-void say_hello() {
-    std::cout << "Hello, world!" << std::endl;
+MazePrototypeFactory::MazePrototypeFactory(Maze *m, Wall *w, Room *r, Door *d) {
+    _prototypeMaze = m;
+    _prototypeWall = w;
+    _prototypeRoom = r;
+    _prototypeDoor = d;
+}
+
+Wall *MazePrototypeFactory::MakeWall() const { return _prototypeWall->Clone(); }
+Door *MazePrototypeFactory::MakeDoor(Room *r1, Room *r2) const {
+    Door *door = _prototypeDoor->Clone();
+    door->Initialize(r1, r2);
+    return door;
 }

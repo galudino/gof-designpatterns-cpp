@@ -15,6 +15,13 @@
     \return     0 on success, non-zero on failure
  */
 int main(int argc, const char *argv[]) {
-    say_hello();
+    MazeGame game;
+    MazePrototypeFactory simpleMazeFactory(new Maze, new Wall, new Room,
+                                           new Door);
+    Maze *maze = game.CreateMaze(simpleMazeFactory);
+
+    MazePrototypeFactory bombedMazeFactory(new Maze, new BombedWall,
+                                           new RoomWithABomb, new Door);
+
     return 0;
 }
