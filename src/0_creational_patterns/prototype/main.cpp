@@ -1,28 +1,22 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include <iostream>
+#include "BombedWall.h"
+#include "Door.h"
+#include "Maze.h"
+#include "MazeGame.h"
+#include "MazePrototypeFactory.h"
+#include "RoomWithABomb.h"
+#include "Wall.h"
 
-    \author
-    \date
- */
-
-#include "prototype.hpp"
-
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
-
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
+int main() {
     MazeGame game;
+
     MazePrototypeFactory simpleMazeFactory(new Maze, new Wall, new Room,
                                            new Door);
     Maze *maze = game.CreateMaze(simpleMazeFactory);
+    std::cout << maze << std::endl;
 
     MazePrototypeFactory bombedMazeFactory(new Maze, new BombedWall,
                                            new RoomWithABomb, new Door);
 
-    delete maze;
     return 0;
 }

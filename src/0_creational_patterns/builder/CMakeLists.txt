@@ -1,7 +1,18 @@
-add_library("builder-library" "builder.hpp" "builder.cpp")
-target_include_directories("builder-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(../models)
 
-include_directories("../maze_types")
-add_executable("builder-demo" "main.cpp")
-target_link_libraries("builder-demo" INTERFACE "maze_types-library")
-target_link_libraries("builder-demo" LINK_PUBLIC "builder-library")
+set(builder_src
+    CountingMazeBuilder.h
+    CountingMazeBuilder.cpp
+    MazeBuilder.h
+    MazeBuilder.cpp
+    StandardMazeBuilder.h
+    StandardMazeBuilder.cpp)
+
+add_library(builder_lib SHARED ${builder_src})
+target_link_libraries(builder_lib LINK_PUBLIC creational_patterns_lib)
+
+add_executable(builder1 main_builder1.cpp)
+add_executable(builder2 main_builder2.cpp)
+
+target_link_libraries(builder1 builder_lib creational_patterns_lib)
+target_link_libraries(builder2 builder_lib creational_patterns_lib)

@@ -1,20 +1,16 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include "Font.h"
+#include "GlyphContext.h"
 
-    \author
-    \date
- */
+int main() {
+    GlyphContext gc;
+    Font *times12 = new Font("Times-Roman-12");
+    Font *timesItalic12 = new Font("Times-Italic-12");
+    // ...
 
-#include "header.hpp"
+    gc.SetFont(times12, 6);
 
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
+    gc.Insert(6);
+    gc.SetFont(timesItalic12, 6);
 
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
-    say_hello();
     return 0;
 }

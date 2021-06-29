@@ -1,20 +1,42 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include "Employee.h"
+#include "Iterator.h"
+#include "List.h"
+#include "ListIterator.h"
+#include "ReverseListIterator.h"
+#include "SkipList.h"
+#include "SkipListIterator.h"
 
-    \author
-    \date
- */
+void PrintEmployees(Iterator<Employee *> &i) {
+    for (i.First(); !i.IsDone(); i.Next()) {
+        i.CurrentItem()->Print();
+    }
+}
 
-#include "header.hpp"
+int main() {
+    // EXAMPLE 1: List
 
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
+    List<Employee *> *employees;
 
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
-    say_hello();
-    return 0;
+    employees = new List<Employee *>;
+    employees->Append(new Employee);
+    employees->Append(new Employee);
+    employees->Append(new Employee);
+
+    ListIterator<Employee *> forward(employees);
+    ReverseListIterator<Employee *> backward(employees);
+
+    PrintEmployees(forward);
+    PrintEmployees(backward);
+
+    // EXAMPLE 2: SkipList
+
+    SkipList<Employee *> *employees2;
+
+    employees2 = new SkipList<Employee *>;
+    employees2->Append(new Employee);
+    employees2->Append(new Employee);
+    employees2->Append(new Employee);
+
+    SkipListIterator<Employee *> iterator(employees2);
+    PrintEmployees(iterator);
 }

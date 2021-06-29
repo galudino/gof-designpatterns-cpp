@@ -1,5 +1,6 @@
-add_library("bridge-library" "header.hpp" "source.cpp")
-target_include_directories("bridge-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_subdirectory(./models)
 
-add_executable("bridge-demo" "main.cpp")
-target_link_libraries("bridge-demo" LINK_PUBLIC "bridge-library")
+include_directories(../../3_foundation_classes)
+
+add_executable(bridge main.cpp)
+target_link_libraries(bridge LINK_PUBLIC bridge_lib)

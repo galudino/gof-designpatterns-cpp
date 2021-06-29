@@ -1,5 +1,5 @@
-add_library("flyweight-library" "header.hpp" "source.cpp")
-target_include_directories("flyweight-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_subdirectory("./models")
+include_directories("./models")
 
-add_executable("flyweight-demo" "main.cpp")
-target_link_libraries("flyweight-demo" LINK_PUBLIC "flyweight-library")
+add_executable(flyweight main.cpp)
+target_link_libraries(flyweight flyweight_lib)

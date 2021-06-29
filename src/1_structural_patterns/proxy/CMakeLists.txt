@@ -1,5 +1,17 @@
-add_library("proxy-library" "header.hpp" "source.cpp")
-target_include_directories("proxy-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(../../3_foundation_classes)
 
-add_executable("proxy-demo" "main.cpp")
-target_link_libraries("proxy-demo" LINK_PUBLIC "proxy-library")
+set(proxy_src
+    Graphic.h
+    Graphic.cpp
+    TextDocument.h
+    TextDocument.cpp
+    Image.h
+    Image.cpp
+    ImageProxy.h
+    ImageProxy.cpp)
+
+add_library(proxy_lib SHARED ${proxy_src})
+target_link_libraries(proxy_lib foundation_classes_lib)
+
+add_executable(proxy main.cpp)
+target_link_libraries(proxy proxy_lib)

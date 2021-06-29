@@ -1,6 +1,11 @@
-include_directories("../abstract_factory" "../maze_types")
-add_library("prototype-library" "prototype.hpp" "prototype.cpp")
-target_include_directories("prototype-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(../models)
 
-add_executable("prototype-demo" "main.cpp")
-target_link_libraries("prototype-demo" LINK_PUBLIC "prototype-library")
+set(prototype_src
+    MazePrototypeFactory.h
+    MazePrototypeFactory.cpp)
+
+add_library(prototype_lib SHARED ${prototype_src})
+target_link_libraries(prototype_lib LINK_PUBLIC creational_patterns_lib)
+add_executable(prototype main.cpp)
+
+target_link_libraries(prototype prototype_lib creational_patterns_lib)

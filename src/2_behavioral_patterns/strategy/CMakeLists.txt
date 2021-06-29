@@ -1,5 +1,7 @@
-add_library("strategy-library" "header.hpp" "source.cpp")
-target_include_directories("strategy-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_subdirectory(./models)
+include_directories(./models)
 
-add_executable("strategy-demo" "main.cpp")
-target_link_libraries("strategy-demo" LINK_PUBLIC "strategy-library")
+target_link_libraries(strategy_lib foundation_classes_lib)
+
+add_executable(strategy main.cpp)
+target_link_libraries(strategy strategy_lib)

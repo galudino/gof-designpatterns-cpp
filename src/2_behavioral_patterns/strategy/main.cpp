@@ -1,20 +1,14 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include "Composition.h"
+#include "SimpleCompositor.h"
+#include "TeXCompositor.h"
+#include "ArrayCompositor.h"
 
-    \author
-    \date
- */
+int main() {
+    Composition *quick = new Composition(new SimpleCompositor);
+    Composition *slick = new Composition(new TeXCompositor);
+    Composition *iconic = new Composition(new ArrayCompositor(100));
 
-#include "header.hpp"
-
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
-
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
-    say_hello();
-    return 0;
+    quick->Repair();
+    slick->Repair();
+    iconic->Repair();
 }

@@ -1,20 +1,15 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include "Command.h"
+#include "SimpleCommand.h"
+#include "MyClass.h"
 
-    \author
-    \date
- */
+int main() {
+    MyClass *receiver = new MyClass;
 
-#include "header.hpp"
+    // ...
 
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
+    Command *aCommand = new SimpleCommand<MyClass>(receiver, &MyClass::Action);
 
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
-    say_hello();
-    return 0;
+    // ...
+
+    aCommand->Execute();
 }

@@ -1,19 +1,15 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include <iostream>
 
-    \author
-    \date
- */
+#include "BombedMazeGame.h"
+#include "Maze.h"
+#include "MazeGame.h"
 
-#include "factory_method.hpp"
+int main() {
+    MazeGame myGame;
+    Maze *m1 = myGame.CreateMaze();
+    std::cout << m1 << std::endl;
 
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
-
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
-    return 0;
+    BombedMazeGame myBombedGame;
+    Maze *m2 = myBombedGame.CreateMaze();
+    std::cout << m2 << std::endl;
 }

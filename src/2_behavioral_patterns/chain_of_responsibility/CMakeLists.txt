@@ -1,5 +1,6 @@
-add_library("example-library" "header.hpp" "source.cpp")
-target_include_directories("example-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_subdirectory(./models)
+include_directories(./models)
 
-add_executable("example-demo" "main.cpp")
-target_link_libraries("example-demo" LINK_PUBLIC "example-library")
+add_executable(chain_of_responsibility main.cpp)
+
+target_link_libraries(chain_of_responsibility chain_of_responsibility_lib)

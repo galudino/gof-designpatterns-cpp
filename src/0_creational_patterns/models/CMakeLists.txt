@@ -1,0 +1,39 @@
+include_directories(
+    ../abstract_factory
+    ../builder
+)
+
+set(creational_patterns_src
+    BombedMazeFactory.h
+    BombedMazeFactory.cpp
+    BombedMazeGame.h
+    BombedMazeGame.cpp
+    BombedWall.h
+    BombedWall.cpp
+    CastSpell.h
+    Door.h
+    Door.cpp
+    DoorNeedingSpell.h
+    DoorNeedingSpell.cpp
+    EnchantedMazeFactory.h
+    EnchantedMazeFactory.cpp
+    EnchantedRoom.h
+    EnchantedRoom.cpp
+    MapSite.h
+    Maze.h
+    Maze.cpp
+    MazeFactory.h
+    MazeFactory.cpp
+    MazeGame.h
+    MazeGame.cpp
+    MazeParts.h
+    Room.h
+    Room.cpp
+    RoomWithABomb.h
+    RoomWithABomb.cpp
+    Spell.h
+    Wall.h
+    Wall.cpp
+)
+
+add_library(creational_patterns_lib SHARED ${creational_patterns_src})

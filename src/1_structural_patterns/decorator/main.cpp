@@ -1,20 +1,11 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include "BorderDecorator.h"
+#include "ScrollDecorator.h"
+#include "TextView.h"
+#include "Window.h"
 
-    \author
-    \date
- */
+int main() {
+    Window *window = new Window;
+    TextView *textView = new TextView;
 
-#include "header.hpp"
-
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
-
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
-    say_hello();
-    return 0;
+    window->SetContents(new BorderDecorator(new ScrollDecorator(textView), 1));
 }

@@ -1,5 +1,24 @@
-add_library("composite-library" "header.hpp" "source.cpp")
-target_include_directories("composite-library" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(../../2_behavioral_patterns/iterator)
+include_directories(../../3_foundation_classes)
 
-add_executable("composite-demo" "main.cpp")
-target_link_libraries("composite-demo" LINK_PUBLIC "composite-library")
+set(composite_src
+    Bus.h
+    Bus.cpp
+    Cabinet.h
+    Cabinet.cpp
+    Card.h
+    Card.cpp
+    Chassis.h
+    Chassis.cpp
+    CompositeEquipment.h
+    CompositeEquipment.cpp
+    Equipment.h
+    Equipment.cpp
+    FloppyDisk.h
+    FloppyDisk.cpp)
+
+add_library(composite_lib SHARED ${composite_src})
+
+add_executable(composite main.cpp)
+
+target_link_libraries(composite composite_lib)

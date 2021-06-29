@@ -1,20 +1,22 @@
-/*!
-    \file       main.cpp
-    \brief      Client source file
+#include <iostream>
 
-    \author
-    \date
- */
+#include "Bus.h"
+#include "Cabinet.h"
+#include "Card.h"
+#include "Chassis.h"
+#include "FloppyDisk.h"
 
-#include "header.hpp"
+int main() {
+    Cabinet *cabinet = new Cabinet("PC Cabinet");
+    Chassis *chassis = new Chassis("PC Chassis");
 
-/*!
-    \param[in]  argc    Command line argument count
-    \param[in]  argv    Command line arguments
+    cabinet->Add(chassis);
 
-    \return     0 on success, non-zero on failure
- */
-int main(int argc, const char *argv[]) {
-    say_hello();
-    return 0;
+    Bus *bus = new Bus("MCA Bus");
+    bus->Add(new Card("16Mbs Token Ring"));
+
+    chassis->Add(bus);
+    chassis->Add(new FloppyDisk("3.5in Floppy"));
+
+    std::cout << "The net price is " << chassis->NetPrice() << std::endl;
 }
