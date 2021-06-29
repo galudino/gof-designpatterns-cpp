@@ -38,6 +38,9 @@ My purpose is to:
 
 ## Design Pattern sources
 
+Note: These hyperlinks do not work anymore.
+I am in the process of reworking my folder structure.
+
 ### [Creational Patterns](./src/0_creational_patterns)
   - [Abstract Factory](./src/0_creational_patterns/abstract_factory)
     - [`header.hpp`](./src/0_creational_patterns/abstract_factory/header.hpp)

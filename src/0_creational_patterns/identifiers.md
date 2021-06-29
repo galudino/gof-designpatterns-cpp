@@ -47,7 +47,5 @@ class maze_prototype_factory;
 
 ### singleton
 ```cpp
-namespace singleton {
-class maze_factory;
-}
+class maze_factory_as_singleton;
 ```
