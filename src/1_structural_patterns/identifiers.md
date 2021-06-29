@@ -69,3 +69,10 @@ class GlyphFactory;
 ```
 
 ### Proxy
+```cpp
+class Graphic;
+class Image;
+class ImageProxy;
+class Event;
+class TextDocument;
+```
