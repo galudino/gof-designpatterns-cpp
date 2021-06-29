@@ -1,13 +1,13 @@
 /*!
-    \file       header.hpp
+    \file       maze_types.hpp
     \brief      Header file
 
     \author
     \date
  */
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
+#ifndef MAZE_TYPES_HPP
+#define MAZE_TYPES_HPP
 
 #include <unordered_map>
 
@@ -41,6 +41,9 @@ class BombedMazeFactory;
 // Game container class
 class MazeGame;
 
+// Base type builder
+class MazeBuilder;
+
 class MapSite {
 public:
     virtual void Enter() = 0;
@@ -48,6 +51,7 @@ public:
 
 class Room : public MapSite {
 public:
+    Room() = default;
     Room(int roomNo) : MapSite(), _roomNumber(roomNo) { }
     
     MapSite *GetSide(Direction dir) const {
@@ -70,6 +74,7 @@ private:
 class Wall : public MapSite {
 public:
     virtual void Enter() { }
+    Wall *Clone() { return nullptr; } // TODO
 };
 
 class Door : public MapSite {
@@ -87,6 +92,9 @@ public:
     
     bool isOpen() const { return _isOpen; }
 
+    // TODO
+    Door *Clone() { return nullptr; }
+    void Initialize(Room *room1, Room *room2) { }
 private:
     Room *_room1;
     Room *_room2;
@@ -137,49 +145,27 @@ class Bomb {};
 
 class RoomWithABomb : public Room {
 public:
+    RoomWithABomb() = default;
     RoomWithABomb(int roomNo) : Room(roomNo) { }
 };
 
 class BombedWall : public Wall {};
-    
-class MazeFactory {
-public:
-    virtual Maze *MakeMaze() const { return new Maze; }
-    virtual Wall *MakeWall() const { return new Wall; }
-    virtual Room *MakeRoom(int n) const { return new Room(n); }
-    virtual Door *MakeDoor(Room *r1,
-                           Room *r2) const { return new Door(r1, r2); }
-};
-
-class EnchantedMazeFactory : public MazeFactory {
-public:
-    virtual Room *MakeRoom(int n) const {
-        return new EnchantedRoom(n, CastSpell());
-    }
-    
-    virtual Door *MakeDoor(Room *r1, Room *r2) const {
-        return new DoorNeedingSpell(r1, r2);
-    }
-
-protected:
-    Spell *CastSpell() const { return new Spell; }
-};
-    
-class BombedMazeFactory : public MazeFactory {
-public:
-    Wall *MakeWall() const {
-        return new BombedWall;
-    }
-    
-    Room *MakeRoom(int n) const {
-        return new RoomWithABomb(n);
-    }
-};
 
 class MazeGame {
 public:
     Maze *CreateMaze();
     Maze *CreateMaze(MazeFactory &factory);
+    Maze *CreateMaze(MazeBuilder &builder);
+    Maze *CreateComplexMaze(MazeBuilder &builder);
+
+    // factory methods
+    virtual Maze *MakeMaze() const { return new Maze; }
+    virtual Room *MakeRoom(int n) const { return new Room(n); }
+    virtual Wall *MakeWall() const { return new Wall; }
+    virtual Door *MakeDoor(Room *r1, Room *r2) const {
+        return new Door(r1, r2);
+    }
 };
 
-#endif /* HEADER_HPP */
+
+#endif /* MAZE_TYPES_HPP */

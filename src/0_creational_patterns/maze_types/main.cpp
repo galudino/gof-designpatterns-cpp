@@ -6,7 +6,7 @@
     \date
  */
 
-#include "factory_method.hpp"
+#include "maze_types.hpp"
 
 /*!
     \param[in]  argc    Command line argument count
@@ -15,5 +15,6 @@
     \return     0 on success, non-zero on failure
  */
 int main(int argc, const char *argv[]) {
+    
     return 0;
 }

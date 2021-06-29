@@ -6,7 +6,7 @@
     \date
  */
 
-#include "header.hpp"
+#include "builder.hpp"
 #include <iostream>
 
 void use_standard_maze_builder();

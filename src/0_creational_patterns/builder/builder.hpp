@@ -1,14 +1,15 @@
 /*!
-    \file       header.hpp
+    \file       builder.hpp
     \brief      Header file
 
     \author
     \date
  */
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
+#ifndef BUILDER_HPP
+#define BUILDER_HPP
 
+#include "maze_types.hpp"
 #include <unordered_map>
 
 class MazeBuilder {
@@ -53,4 +54,4 @@ private:
     int _rooms;
 };
 
-#endif /* HEADER_HPP */
+#endif /* BUILDER_HPP */

@@ -6,7 +6,7 @@
     \date
  */
 
-#include "header.hpp"
+#include "prototype.hpp"
 
 /*!
     \param[in]  argc    Command line argument count
@@ -23,5 +23,6 @@ int main(int argc, const char *argv[]) {
     MazePrototypeFactory bombedMazeFactory(new Maze, new BombedWall,
                                            new RoomWithABomb, new Door);
 
+    delete maze;
     return 0;
 }

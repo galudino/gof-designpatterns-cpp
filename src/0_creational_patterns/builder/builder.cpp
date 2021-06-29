@@ -1,12 +1,12 @@
 /*!
-    \file       source.cpp
+    \file       builder.cpp
     \brief      Source file
 
     \author
     \date
  */
 
-#include "header.hpp"
+#include "builder.hpp"
 #include <iostream>
 
 Maze *MazeGame::CreateMaze(MazeBuilder &builder) {

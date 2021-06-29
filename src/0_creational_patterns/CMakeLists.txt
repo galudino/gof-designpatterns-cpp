@@ -1,3 +1,4 @@
+add_subdirectory("./maze_types")
 add_subdirectory("./abstract_factory")
 add_subdirectory("./builder")
 add_subdirectory("./factory_method")

@@ -1,12 +1,12 @@
 /*!
-    \file       source.cpp
+    \file       singleton.cpp
     \brief      Source file
 
     \author
     \date
  */
 
-#include "header.hpp"
+#include "singleton.hpp"
 #include <iostream>
 
 MazeFactory *MazeFactory::_instance = nullptr;

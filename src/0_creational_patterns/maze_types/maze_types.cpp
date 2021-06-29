@@ -1,12 +1,12 @@
 /*!
-    \file       source.cpp
+    \file       maze_types.cpp
     \brief      Source file
 
     \author
     \date
  */
 
-#include "header.hpp"
+#include "maze_types.hpp"
 
 Maze *MazeGame::CreateMaze() {
     Maze *aMaze = new Maze;

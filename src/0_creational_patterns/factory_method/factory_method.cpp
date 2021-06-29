@@ -1,12 +1,12 @@
 /*!
-    \file       source.cpp
+    \file       factory_method.cpp
     \brief      Source file
 
     \author
     \date
  */
 
-#include "header.hpp"
+#include "factory_method.hpp"
 #include <iostream>
 
 Maze *MazeGame::CreateMaze() {

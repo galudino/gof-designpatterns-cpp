@@ -1,13 +1,16 @@
 /*!
-    \file       header.hpp
+    \file       prototype.hpp
     \brief      Header file
 
     \author
     \date
  */
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
+#ifndef PROTOTYPE_HPP
+#define PROTOTYPE_HPP
+
+#include "maze_types.hpp"
+#include "abstract_factory.hpp"
 
 class MazePrototypeFactory : public MazeFactory {
 public:
@@ -24,4 +27,4 @@ private:
     Door *_prototypeDoor;
 };
 
-#endif /* HEADER_HPP */
+#endif /* PROTOTYPE_HPP */

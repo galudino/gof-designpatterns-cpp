@@ -1,12 +1,12 @@
 /*!
-    \file       source.cpp
+    \file       prototype.cpp
     \brief      Source file
 
     \author
     \date
  */
 
-#include "header.hpp"
+#include "prototype.hpp"
 #include <iostream>
 
 MazePrototypeFactory::MazePrototypeFactory(Maze *m, Wall *w, Room *r, Door *d) {
