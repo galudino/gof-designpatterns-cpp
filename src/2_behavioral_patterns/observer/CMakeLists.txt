@@ -1,16 +1,16 @@
 include_directories(./../../3_foundation_classes)
-include_directories(../iterator)
+include_directories(../iterator/models)
 
 set(observer_src
-    AnalogClock.h
-    ClockTimer.h
-    ClockTimer.cpp
-    DigitalClock.h
-    DigitalClock.cpp
-    Observer.h
-    Subject.h
-    Subject.cpp
-    Widget.h
+    analog_clock.h
+    clock_timer.h
+    clock_timer.cpp
+    digital_clock.h
+    digital_clock.cpp
+    observer.h
+    subject.h
+    subject.cpp
+    widget.h
 )
 
 add_library(observer_lib SHARED ${observer_src})

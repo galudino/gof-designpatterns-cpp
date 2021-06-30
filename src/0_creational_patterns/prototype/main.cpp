@@ -1,22 +1,28 @@
 #include <iostream>
-#include "BombedWall.h"
-#include "Door.h"
-#include "Maze.h"
-#include "MazeGame.h"
-#include "MazePrototypeFactory.h"
-#include "RoomWithABomb.h"
-#include "Wall.h"
+#include "bombed_wall.h"
+#include "door.h"
+#include "maze.h"
+#include "maze_game.h"
+#include "maze_prototype_factory.h"
+#include "room_with_a_bomb.h"
+#include "wall.h"
 
 int main() {
-    MazeGame game;
+    maze_game game;
 
-    MazePrototypeFactory simpleMazeFactory(new Maze, new Wall, new Room,
-                                           new Door);
-    Maze *maze = game.CreateMaze(simpleMazeFactory);
-    std::cout << maze << std::endl;
+    maze_prototype_factory simple_maze_factory(new maze,
+                                               new wall,
+                                               new room,
+                                               new door);
+    
+    maze *m = game.create_maze(simple_maze_factory);
+    
+    std::cout << m << std::endl;
 
-    MazePrototypeFactory bombedMazeFactory(new Maze, new BombedWall,
-                                           new RoomWithABomb, new Door);
+    maze_prototype_factory bombed_maze_factory(new maze,
+                                               new bombed_wall,
+                                               new room_with_a_bomb,
+                                               new door);
 
     return 0;
 }

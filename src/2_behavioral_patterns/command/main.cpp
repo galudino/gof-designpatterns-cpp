@@ -1,15 +1,15 @@
-#include "Command.h"
-#include "SimpleCommand.h"
-#include "MyClass.h"
+#include "command.h"
+#include "simple_command.h"
+#include "my_class.h"
 
 int main() {
-    MyClass *receiver = new MyClass;
+    my_class *receiver = new my_class;
 
     // ...
 
-    Command *aCommand = new SimpleCommand<MyClass>(receiver, &MyClass::Action);
+    command *c = new simple_command<my_class>(receiver, &my_class::action);
 
     // ...
 
-    aCommand->Execute();
+    c->execute();
 }

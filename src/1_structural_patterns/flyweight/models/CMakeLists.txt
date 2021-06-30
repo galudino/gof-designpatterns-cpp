@@ -1,16 +1,16 @@
 set(flyweight_src
-    Character.h
-    Character.cpp
-    Column.h
-    Font.h
-    Font.cpp
-    Glyph.h
-    Glyph.cpp
-    GlyphContext.h
-    GlyphContext.cpp
-    GlyphFactory.h
-    GlyphFactory.cpp
-    Row.h
+    character.h
+    character.cpp
+    column.h
+    font.h
+    font.cpp
+    glyph.h
+    glyph.cpp
+    glyph_context.h
+    glyph_context.cpp
+    glyph_factory.h
+    glyph_factory.cpp
+    row.h
 )
 
 add_library(flyweight_lib SHARED ${flyweight_src})

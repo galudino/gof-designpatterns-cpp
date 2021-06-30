@@ -1,33 +1,33 @@
-#include "Equipment.h"
+#include "equipment.h"
 
-Equipment::Equipment(const char *name) { _name = name; }
+equipment::equipment(const char *name) { m_name = name; }
 
-Equipment::~Equipment() {}
+equipment::~equipment() {}
 
-Watt Equipment::Power() {
+watt equipment::power() {
     // TODO: throw exception because this should never called?
     return 0;
 }
 
-Currency Equipment::NetPrice() {
+currency equipment::net_price() {
     // TODO: throw exception because this should never called?
     return 0;
 }
 
-Currency Equipment::DiscountPrice() {
+currency equipment::discount_price() {
     // TODO: throw exception because this should never called?
     return 0;
 }
 
-void Equipment::Add(Equipment *) {
+void equipment::add(equipment *) {
     // TODO: throw exception, because this should never be called!
 }
 
-void Equipment::Remove(Equipment *) {
+void equipment::remove(equipment *) {
     // TODO: throw exception, because this should never be called!
 }
 
-Iterator<Equipment *> *Equipment::CreateIterator() {
+iterator<equipment *> *equipment::create_iterator() {
     // TODO: return a NullIterator
     return 0;
 }

@@ -1,48 +1,44 @@
-#include "Image.h"
+#include "image.h"
 #include <cstring>
 #include <iostream>
 #include <fstream>
 
-class Event;
-class Point;
+class event;
+class point;
 
-Image::Image(const char *file) {
-    strcpy(_fileName, file);
-    std::cout << "Constructing image from file " << file << "." << std::endl;
+image::image(const char *file) {
+    std::strcpy(m_filename, file);
 }
 
-Image::~Image() { delete _fileName; }
+image::~image() { delete m_filename; }
 
-void Image::Draw(const Point &at) {
-    std::cout << "Drawing image at point " << at << "." << std::endl;
+void image::draw(const point &at) {
+
 }
 
-void Image::HandleMouse(Event &event) {
-    // std::cout << "Handling mouse event " << event << std::endl;
+void image::handle_mouse(event &event) {
+
 }
 
-const Point &Image::GetExtent() { return _extent; }
+const point &image::get_extent() { return m_extent; }
 
-void Image::Load(std::istream &from) {
-    std::cout << "Loading image from input stream ";
-    std::copy(std::istream_iterator<char>(from), std::istream_iterator<char>(),
-              std::ostream_iterator<char>(std::cout));
+void image::load(std::istream &from) {
+
 }
 
-void Image::Save(std::ostream &to) {
-    std::cout << "Saving image to output stream ";
-    // TODO
+void image::save(std::ostream &to) {
+
 }
 
-std::ostream &operator<<(std::ostream &os, const Image &i) {
-    os << i._extent << " " << i._fileName;
+std::ostream &operator<<(std::ostream &os, const image &i) {
+    os << i.m_extent << " " << i.m_filename;
     return os;
 }
 
-std::istream &operator>>(std::istream &is, Image &i) {
-    is >> i._extent;
+std::istream &operator>>(std::istream &is, image &i) {
+    is >> i.m_extent;
 
-    const auto str = std::string(i._fileName);
+    const auto str = std::string(i.m_filename);
     for (auto ch : str) {
         is >> ch;
     }

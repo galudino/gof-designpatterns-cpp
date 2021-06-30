@@ -1,11 +1,11 @@
-#include "BorderDecorator.h"
-#include "ScrollDecorator.h"
-#include "TextView.h"
-#include "Window.h"
+#include "border_decorator.h"
+#include "scroll_decorator.h"
+#include "text_view.h"
+#include "window.h"
 
 int main() {
-    Window *window = new Window;
-    TextView *textView = new TextView;
+    window *w = new window;
+    text_view *tv = new text_view;
 
-    window->SetContents(new BorderDecorator(new ScrollDecorator(textView), 1));
+    w->set_contents(new border_decorator(new scroll_decorator(tv), 1));
 }

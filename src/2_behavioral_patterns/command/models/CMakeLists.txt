@@ -1,17 +1,21 @@
-include_directories(../../iterator)
+include_directories(../../iterator/models)
 
 set(command_src
-    Application.h
-    Application.cpp
-    "Command.h"
-    "Command.cpp"
-    Document.h
-    Document.cpp
-    OpenCommand.h
-    OpenCommand.cpp
-    PasteCommand.h
-    PasteCommand.cpp
-    MacroCommand.h
-    MacroCommand.cpp)
+    application.h
+    application.cpp
+    "command.h"
+    "command.cpp"
+    document.h
+    document.cpp
+    my_class.h
+    my_class.cpp
+    open_command.h
+    open_command.cpp
+    paste_command.h
+    paste_command.cpp
+    macro_command.h
+    macro_command.cpp
+    simple_command.h
+)
 
 add_library(command_lib SHARED ${command_src})

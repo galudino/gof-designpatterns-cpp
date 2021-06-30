@@ -1,16 +1,16 @@
-#include "Font.h"
-#include "GlyphContext.h"
+#include "font.h"
+#include "glyph_context.h"
 
 int main() {
-    GlyphContext gc;
-    Font *times12 = new Font("Times-Roman-12");
-    Font *timesItalic12 = new Font("Times-Italic-12");
+    glyph_context gc;
+    font *times_12 = new font("Times-Roman-12");
+    font *times_italic_12 = new font("Times-Italic-12");
     // ...
 
-    gc.SetFont(times12, 6);
+    gc.set_font(times_12, 6);
 
-    gc.Insert(6);
-    gc.SetFont(timesItalic12, 6);
+    gc.insert(6);
+    gc.set_font(times_italic_12, 6);
 
     return 0;
 }

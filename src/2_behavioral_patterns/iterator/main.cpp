@@ -1,42 +1,41 @@
-#include "Employee.h"
-#include "Iterator.h"
-#include "List.h"
-#include "ListIterator.h"
-#include "ReverseListIterator.h"
-#include "SkipList.h"
-#include "SkipListIterator.h"
+#include "employee.h"
+#include "iterator.h"
+#include "list.h"
+#include "reverse_list_iterator.h"
+#include "skip_list.h"
+#include "skip_list_iterator.h"
 
-void PrintEmployees(Iterator<Employee *> &i) {
-    for (i.First(); !i.IsDone(); i.Next()) {
-        i.CurrentItem()->Print();
+void PrintEmployees(iterator<employee *> &i) {
+    for (i.first(); !i.done(); i.next()) {
+        i.current_item()->print();
     }
 }
 
 int main() {
     // EXAMPLE 1: List
 
-    List<Employee *> *employees;
+    list<employee *> *employees;
 
-    employees = new List<Employee *>;
-    employees->Append(new Employee);
-    employees->Append(new Employee);
-    employees->Append(new Employee);
+    employees = new list<employee *>;
+    employees->append(new employee);
+    employees->append(new employee);
+    employees->append(new employee);
 
-    ListIterator<Employee *> forward(employees);
-    ReverseListIterator<Employee *> backward(employees);
+    list_iterator<employee *> forward(employees);
+    reverse_list_iterator<employee *> backward(employees);
 
     PrintEmployees(forward);
     PrintEmployees(backward);
 
     // EXAMPLE 2: SkipList
 
-    SkipList<Employee *> *employees2;
+    skip_list<employee *> *employees2;
 
-    employees2 = new SkipList<Employee *>;
-    employees2->Append(new Employee);
-    employees2->Append(new Employee);
-    employees2->Append(new Employee);
+    employees2 = new skip_list<employee *>;
+    employees2->append(new employee);
+    employees2->append(new employee);
+    employees2->append(new employee);
 
-    SkipListIterator<Employee *> iterator(employees2);
+    skip_list_iterator<employee *> iterator(employees2);
     PrintEmployees(iterator);
 }

@@ -1,14 +1,14 @@
-#include "Subject.h"
-#include "Observer.h"
+#include "subject.h"
+#include "observer.h"
 
-void Subject::Attach(Observer *o) { _observers->Append(o); }
+void subject::attach(observer *o) { m_observers->append(o); }
 
-void Subject::Detach(Observer *o) { _observers->Remove(o); }
+void subject::detach(observer *o) { m_observers->remove(o); }
 
-void Subject::Notify() {
-    ListIterator<Observer *> i(_observers);
+void subject::notify() {
+    list_iterator<observer *> i(m_observers);
 
-    for (i.First(); !i.IsDone(); i.Next()) {
-        i.CurrentItem()->Update(this);
+    for (i.first(); !i.done(); i.next()) {
+        i.current_item()->update(this);
     }
 }

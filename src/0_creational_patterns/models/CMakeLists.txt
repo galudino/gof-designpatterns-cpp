@@ -4,36 +4,37 @@ include_directories(
 )
 
 set(creational_patterns_src
-    BombedMazeFactory.h
-    BombedMazeFactory.cpp
-    BombedMazeGame.h
-    BombedMazeGame.cpp
-    BombedWall.h
-    BombedWall.cpp
-    CastSpell.h
-    Door.h
-    Door.cpp
-    DoorNeedingSpell.h
-    DoorNeedingSpell.cpp
-    EnchantedMazeFactory.h
-    EnchantedMazeFactory.cpp
-    EnchantedRoom.h
-    EnchantedRoom.cpp
-    MapSite.h
-    Maze.h
-    Maze.cpp
-    MazeFactory.h
-    MazeFactory.cpp
-    MazeGame.h
-    MazeGame.cpp
-    MazeParts.h
-    Room.h
-    Room.cpp
-    RoomWithABomb.h
-    RoomWithABomb.cpp
-    Spell.h
-    Wall.h
-    Wall.cpp
+    bombed_maze_factory.h
+    bombed_maze_factory.cpp
+    bombed_maze_game.h
+    bombed_maze_game.cpp
+    bombed_wall.h
+    bombed_wall.cpp
+    cast_spell.h
+    door.h
+    door.cpp
+    door_needing_spell.h
+    door_needing_spell.cpp
+    enchanted_maze_factory.h
+    enchanted_maze_factory.cpp
+    enchanted_maze_game.h
+    enchanted_room.h
+    enchanted_room.cpp
+    map_site.h
+    maze.h
+    maze.cpp
+    maze_factory.h
+    maze_factory.cpp
+    maze_game.h
+    maze_game.cpp
+    maze_parts.h
+    room.h
+    room.cpp
+    room_with_a_bomb.h
+    room_with_a_bomb.cpp
+    spell.h
+    wall.h
+    wall.cpp
 )
 
 add_library(creational_patterns_lib SHARED ${creational_patterns_src})

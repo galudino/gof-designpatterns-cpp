@@ -1,21 +1,21 @@
-include_directories(../../2_behavioral_patterns/iterator)
+include_directories(../../2_behavioral_patterns/iterator/models)
 include_directories(../../3_foundation_classes)
 
 set(composite_src
-    Bus.h
-    Bus.cpp
-    Cabinet.h
-    Cabinet.cpp
-    Card.h
-    Card.cpp
-    Chassis.h
-    Chassis.cpp
-    CompositeEquipment.h
-    CompositeEquipment.cpp
-    Equipment.h
-    Equipment.cpp
-    FloppyDisk.h
-    FloppyDisk.cpp)
+    bus.h
+    bus.cpp
+    cabinet.h
+    cabinet.cpp
+    card.h
+    card.cpp
+    chassis.h
+    chassis.cpp
+    composite_equipment.h
+    composite_equipment.cpp
+    equipment.h
+    equipment.cpp
+    floppy_disk.h
+    floppy_disk.cpp)
 
 add_library(composite_lib SHARED ${composite_src})
 

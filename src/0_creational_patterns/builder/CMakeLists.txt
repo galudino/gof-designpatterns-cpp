@@ -1,12 +1,14 @@
 include_directories(../models)
 
 set(builder_src
-    CountingMazeBuilder.h
-    CountingMazeBuilder.cpp
-    MazeBuilder.h
-    MazeBuilder.cpp
-    StandardMazeBuilder.h
-    StandardMazeBuilder.cpp)
+    counting_maze_builder.h
+    counting_maze_builder.cpp
+    maze_builder.h
+    maze_builder.cpp
+    
+    standard_maze_builder.h
+    standard_maze_builder.cpp
+)
 
 add_library(builder_lib SHARED ${builder_src})
 target_link_libraries(builder_lib LINK_PUBLIC creational_patterns_lib)

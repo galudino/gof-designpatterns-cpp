@@ -1,20 +1,20 @@
-#include "Bus.h"
+#include "bus.h"
 
-Bus::Bus(const char *name) : CompositeEquipment(name) {}
+bus::bus(const char *name) : composite_equipment(name) {}
 
-Bus::~Bus() {}
+bus::~bus() {}
 
-Watt Bus::Power() {
-    Watt w(1);
+watt bus::power() {
+    watt w(1);
     return w;
 }
 
-Currency Bus::NetPrice() {
-    Currency c(20);
+currency bus::net_price() {
+    currency c(20);
     return c;
 }
 
-Currency Bus::DiscountPrice() {
-    Currency c(16);
+currency bus::discount_price() {
+    currency c(16);
     return c;
 }

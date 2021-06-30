@@ -1,20 +1,20 @@
-#include "Cabinet.h"
+#include "cabinet.h"
 
-Cabinet::Cabinet(const char *name) : CompositeEquipment(name) {}
+cabinet::cabinet(const char *name) : composite_equipment(name) {}
 
-Cabinet::~Cabinet() {}
+cabinet::~cabinet() {}
 
-Watt Cabinet::Power() {
-    Watt w(2);
+watt cabinet::power() {
+    watt w(2);
     return w;
 }
 
-Currency Cabinet::NetPrice() {
-    Currency c(30);
+currency cabinet::net_price() {
+    currency c(30);
     return c;
 }
 
-Currency Cabinet::DiscountPrice() {
-    Currency c(26);
+currency cabinet::discount_price() {
+    currency c(26);
     return c;
 }

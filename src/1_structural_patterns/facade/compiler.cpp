@@ -1,18 +1,18 @@
-#include "Compiler.h"
-#include "Scanner.h"
+#include "compiler.h"
+#include "scanner.h"
 
-#include "Parser.h"
-#include "ProgramNodeBuilder.h"
-#include "RISCCodeGenerator.h"
+#include "parser.h"
+#include "program_node_builder.h"
+#include "risc_code_generator.h"
 
-void Compiler::Compile(istream &input, BytecodeStream &output) {
-    Scanner scanner(input);
-    ProgramNodeBuilder builder;
-    Parser parser;
+void compiler::compile(std::istream &input, bytecode_stream &output) {
+    scanner sc(input);
+    program_node_builder builder;
+    parser parser;
 
-    parser.Parse(scanner, builder);
+    parser.parse(sc, builder);
 
-    RISCCodeGenerator generator(output);
-    ProgramNode *parseTree = builder.GetRootNode();
-    parseTree->Traverse(generator);
+    risc_code_generator generator(output);
+    program_node *node = builder.GetRootNode();
+    node->traverse(generator);
 }

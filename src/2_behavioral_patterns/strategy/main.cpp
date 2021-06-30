@@ -1,14 +1,14 @@
-#include "Composition.h"
-#include "SimpleCompositor.h"
-#include "TeXCompositor.h"
-#include "ArrayCompositor.h"
+#include "composition.h"
+#include "simple_compositor.h"
+#include "tex_compositor.h"
+#include "array_compositor.h"
 
 int main() {
-    Composition *quick = new Composition(new SimpleCompositor);
-    Composition *slick = new Composition(new TeXCompositor);
-    Composition *iconic = new Composition(new ArrayCompositor(100));
+    composition *quick = new composition(new simple_compositor);
+    composition *slick = new composition(new tex_compositor);
+    composition *iconic = new composition(new array_compositor(100));
 
-    quick->Repair();
-    slick->Repair();
-    iconic->Repair();
+    quick->repair();
+    slick->repair();
+    iconic->repair();
 }

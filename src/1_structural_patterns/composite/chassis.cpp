@@ -1,20 +1,20 @@
-#include "Chassis.h"
+#include "chassis.h"
 
-Chassis::Chassis(const char *name) : CompositeEquipment(name) {}
+chassis::chassis(const char *name) : composite_equipment(name) {}
 
-Chassis::~Chassis() {}
+chassis::~chassis() {}
 
-Watt Chassis::Power() {
-    Watt w(4);
+watt chassis::power() {
+    watt w(4);
     return w;
 }
 
-Currency Chassis::NetPrice() {
-    Currency c(40);
+currency chassis::net_price() {
+    currency c(40);
     return c;
 }
 
-Currency Chassis::DiscountPrice() {
-    Currency c(36);
+currency chassis::discount_price() {
+    currency c(36);
     return c;
 }

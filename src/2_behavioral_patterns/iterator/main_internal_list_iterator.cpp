@@ -1,15 +1,15 @@
-#include "Employee.h"
-#include "List.h"
-#include "PrintNEmployees.h"
+#include "employee.h"
+#include "list.h"
+#include "print_n_employees.h"
 
 int main() {
-    List<Employee *> *employees;
+    list<employee *> *employees;
 
-    employees = new List<Employee *>;
-    employees->Append(new Employee);
-    employees->Append(new Employee);
-    employees->Append(new Employee);
+    employees = new list<employee *>;
+    employees->append(new employee);
+    employees->append(new employee);
+    employees->append(new employee);
 
-    PrintNEmployees pa(employees, 10);
-    pa.Traverse();
+    print_n_employees pa(employees, 10);
+    pa.traverse();
 }

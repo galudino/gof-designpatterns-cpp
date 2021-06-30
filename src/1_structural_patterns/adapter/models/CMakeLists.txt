@@ -1,10 +1,10 @@
 set(adapter_src
-    Manipulator.h
-    Shape.h
-    TextManipulator.h
-    TextManipulator.cpp
-    TextView.h
-    TextView.cpp)
+    manipulator.h
+    shape.h
+    text_manipulator.h
+    text_manipulator.cpp
+    text_view.h
+    text_view.cpp)
 
 add_library(adapter_lib SHARED ${adapter_src})
 

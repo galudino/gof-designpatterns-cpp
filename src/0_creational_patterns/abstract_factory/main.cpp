@@ -1,13 +1,13 @@
-#include "MazeGame.h"
-#include "BombedMazeFactory.h"
-#include "EnchantedMazeFactory.h"
+#include "maze_game.h"
+#include "bombed_maze_factory.h"
+#include "enchanted_maze_factory.h"
 
 int main() {
-    MazeGame game;
+    maze_game game;
 
-    BombedMazeFactory factoryBombed;
-    EnchantedMazeFactory factoryEnchanted;
-
-    game.CreateMaze(factoryBombed);
-    game.CreateMaze(factoryEnchanted);
+    bombed_maze_factory factory_bombed;
+    enchanted_maze_factory factory_enchanted;
+    
+    game.create_maze(factory_bombed);
+    game.create_maze(factory_enchanted);
 }

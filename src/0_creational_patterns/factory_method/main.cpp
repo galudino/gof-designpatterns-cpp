@@ -1,15 +1,15 @@
 #include <iostream>
 
-#include "BombedMazeGame.h"
-#include "Maze.h"
-#include "MazeGame.h"
+#include "bombed_maze_game.h"
+#include "maze.h"
+#include "maze_game.h"
 
 int main() {
-    MazeGame myGame;
-    Maze *m1 = myGame.CreateMaze();
-    std::cout << m1 << std::endl;
+    maze_game game;
+    maze *m = game.create_maze();
+    std::cout << m << std::endl;
 
-    BombedMazeGame myBombedGame;
-    Maze *m2 = myBombedGame.CreateMaze();
-    std::cout << m2 << std::endl;
+    bombed_maze_game bombed_game;
+    maze *bm = bombed_game.create_maze();
+    std::cout << bm << std::endl;
 }

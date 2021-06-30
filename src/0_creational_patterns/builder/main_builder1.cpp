@@ -1,18 +1,18 @@
 #include <iostream>
-#include "MazeGame.h"
-#include "StandardMazeBuilder.h"
+#include "maze_game.h"
+#include "standard_maze_builder.h"
 
 using namespace std;
 
-class Maze;
+class maze;
 
 int main() {
-    Maze *maze;
-    MazeGame game;
-    StandardMazeBuilder builder;
+    maze *maze;
+    maze_game game;
+    standard_maze_builder builder;
 
-    game.CreateMaze(builder);
-    maze = builder.GetMaze();
+    game.create_maze(builder);
+    maze = builder.get_maze();
 
     cout << maze << endl;
 }

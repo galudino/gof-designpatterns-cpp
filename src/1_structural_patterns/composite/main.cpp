@@ -1,22 +1,22 @@
 #include <iostream>
 
-#include "Bus.h"
-#include "Cabinet.h"
-#include "Card.h"
-#include "Chassis.h"
-#include "FloppyDisk.h"
+#include "bus.h"
+#include "cabinet.h"
+#include "card.h"
+#include "chassis.h"
+#include "floppy_disk.h"
 
 int main() {
-    Cabinet *cabinet = new Cabinet("PC Cabinet");
-    Chassis *chassis = new Chassis("PC Chassis");
+    cabinet *cab = new cabinet("PC Cabinet");
+    chassis *chs = new chassis("PC Chassis");
 
-    cabinet->Add(chassis);
+    cab->add(chs);
 
-    Bus *bus = new Bus("MCA Bus");
-    bus->Add(new Card("16Mbs Token Ring"));
+    bus *b = new bus("MCA Bus");
+    b->add(new card("16Mbs Token Ring"));
 
-    chassis->Add(bus);
-    chassis->Add(new FloppyDisk("3.5in Floppy"));
+    chs->add(b);
+    chs->add(new floppy_disk("3.5in Floppy"));
 
-    std::cout << "The net price is " << chassis->NetPrice() << std::endl;
+    std::cout << "The net price is " << chs->net_price() << std::endl;
 }
