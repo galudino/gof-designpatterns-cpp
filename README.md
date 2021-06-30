@@ -38,9 +38,6 @@ My purpose is to:
 
 ## Design Pattern sources
 
-Note: These hyperlinks do not work anymore.
-I am in the process of reworking my folder structure.
-
 ### [Creational Patterns](./src/0_creational_patterns)
   - [Abstract Factory](./src/0_creational_patterns/abstract_factory)
 
@@ -147,6 +144,23 @@ After running `make`, you can run the `demo` executable:
 Generally:
 ```
 ./build/make/[build-mode]/[target-name]/[executable-name]
+```
+
+The `makebuilds` script (without comments/newlines) looks like this:
+
+```zsh
+#!/bin/zsh
+
+## Remove any previous build folders
+rm -rf ./build/make/Debug/* || true
+rm -rf ./build/make/Release/* || true
+rm -rf ./build/make/RelWithDebInfo/* || true
+rm -rf ./build/make/MinSizeRel/* || true || true
+
+cmake -S ./ -B ./build/make/Debug -DCMAKE_BUILD_TYPE=Debug
+cmake -S ./ -B ./build/make/Release -DCMAKE_BUILD_TYPE=Release
+cmake -S ./ -B ./build/make/RelWithDebInfo -DCMAKE_BUILD_TYPE=RelWithDebInfo
+cmake -S ./ -B ./build/make/MinSizeRel -DCMAKE_BUILD_TYPE=MinSizeRel
 ```
 
 [(back to table of contents)](#table-of-contents)
