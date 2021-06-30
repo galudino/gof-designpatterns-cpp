@@ -14,15 +14,14 @@ public:
     virtual wall *make_wall() const;
     virtual room *make_room(int n) const;
     virtual door *make_door(room *r1, room *r2) const;
-
-#ifdef ABSTRACT_FACTORY
-public:
-#else
+    
+    maze_factory(const maze_factory &f) = delete;
+    maze_factory(maze_factory &&f) = delete;
+    
+    maze_factory &operator=(const maze_factory &f) = delete;
+    maze_factory &operator=(maze_factory &&f) = delete;
 protected:
-#endif
-    maze_factory(); // constructor is public for Abstract Factory, protected for
-                   // Singleton
-
+    maze_factory();
 private:
     static maze_factory *m_instance;
 };
