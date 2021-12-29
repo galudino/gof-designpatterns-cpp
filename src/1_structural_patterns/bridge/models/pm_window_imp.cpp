@@ -1,12 +1,14 @@
 #include "pm_window_imp.h"
 
-void pm_window_imp::device_rect(float x0, float y0, float x1, float y1) {
-    float left = coord::min(x0, x1);
-    float right = coord::max(x0, x1);
-    float bottom = coord::min(y0, y1);
-    float top = coord::max(y0, y1);
+#include <array>
 
-    PPOINTL point[4];
+void pm_window_imp::device_rect(float x0, float y0, float x1, float y1) {
+    auto left = coord::min(x0, x1);
+    auto right = coord::max(x0, x1);
+    auto bottom = coord::min(y0, y1);
+    auto top = coord::max(y0, y1);
+
+    auto point = std::array<PPOINTL, 4>();
 
     point[0].x = left;
     point[0].y = top;
@@ -18,8 +20,8 @@ void pm_window_imp::device_rect(float x0, float y0, float x1, float y1) {
     point[3].y = bottom;
 
     if ((gpi_begin_path(m_hps, 1L) == false) ||
-        (gpi_set_current_position(m_hps, &point[3]) == false) ||
-        (gpi_poly_line(m_hps, 4L, point) == GPI_ERROR) ||
+        (gpi_set_current_position(m_hps, point.data() + 3) == false) ||
+        (gpi_poly_line(m_hps, 4L, point.data()) == GPI_ERROR) ||
         (gpi_end_path(m_hps) == false)) {
         // report error
 

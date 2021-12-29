@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include "view.h"
+#include <array>
 
 class point;
 class window_imp;
@@ -24,10 +25,10 @@ public:
     virtual void raise() {}
     virtual void lower() {}
 
-    virtual void draw_line(const point &, const point &) {}
-    virtual void draw_rect(const point &, const point &);
-    virtual void draw_polygon(const point[], int n) {}
-    virtual void draw_text(const char *, const point &) {}
+    virtual void draw_line(const point &p0, const point &p1) {}
+    virtual void draw_rect(const point &p0, const point &p1);
+    virtual void draw_polygon(const point vertices[], int vertex_count) {}
+    virtual void draw_text(const char *text, const point &pos) {}
 
     view *get_view() { return m_contents; }
 

@@ -6,6 +6,7 @@ class window_imp;
 class window_system_factory {
 public:
     static window_system_factory *instance();
+
     window_imp *make_window_imp() { return nullptr; }
 
 protected:
