@@ -3,18 +3,15 @@
 #include "manipulator.h"
 #include "text_manipulator.h"
 
-void text_shape::bounding_box(point &bottomLeft, point &topRight) const {
-    float bottom, left, width, height;
+void text_shape::bounding_box(point &bottom_left, point &top_right) const {
+    auto bottom = 0.0f;
+    auto left = 0.0f;
+    auto width = 0.0f;
+    auto height = 0.0f;
 
     origin(bottom, left);
     extent(width, height);
 
-    bottomLeft = point(bottom, left);
-    topRight = point(bottom + height, left + width);
-}
-
-bool text_shape::empty() const { return text_view::empty(); }
-
-manipulator *text_shape::create_manipulator() const {
-    return new text_manipulator(this);
+    bottom_left = point(bottom, left);
+    top_right = point(bottom + height, left + width);
 }

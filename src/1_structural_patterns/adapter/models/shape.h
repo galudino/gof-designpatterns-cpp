@@ -7,8 +7,8 @@ class manipulator;
 class shape {
 public:
     shape() = default;
-    virtual void bounding_box(point &bottomLeft, point &topRight) const {}
 
+    virtual void bounding_box(point &bottom_left, point &top_right) const {}
     virtual manipulator *create_manipulator() const { return nullptr; }
 };
 

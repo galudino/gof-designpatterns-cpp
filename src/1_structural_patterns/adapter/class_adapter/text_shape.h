@@ -12,8 +12,12 @@ public:
     text_shape();
 
     virtual void bounding_box(point &bottom_left, point &top_right) const;
-    virtual bool empty() const;
-    virtual manipulator *create_manipulator() const;
+
+    virtual bool empty() const { return text_view::empty(); }
+
+    virtual manipulator *create_manipulator() const {
+        return new text_manipulator(this);
+    }
 };
 
 #endif /* TEXTSHAPE_H */
