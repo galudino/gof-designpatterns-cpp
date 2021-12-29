@@ -5,9 +5,9 @@ counting_maze_builder::counting_maze_builder() { m_rooms = m_doors = 0; }
 
 void counting_maze_builder::build_maze() {}
 
-void counting_maze_builder::build_room(int) { m_rooms++; }
+void counting_maze_builder::build_room(int n) { m_rooms++; }
 
-void counting_maze_builder::build_door(int, int) { m_doors++; }
+void counting_maze_builder::build_door(int n1, int n2) { m_doors++; }
 
 void counting_maze_builder::add_wall(int, direction) {}
 

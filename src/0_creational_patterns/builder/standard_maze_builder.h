@@ -12,13 +12,13 @@ public:
     standard_maze_builder();
 
     virtual void build_maze();
-    virtual void build_room(int);
-    virtual void build_door(int, int);
+    virtual void build_room(int n);
+    virtual void build_door(int n1, int n2);
 
     virtual maze *get_maze();
 
 private:
-    direction common_wall(room *, room *);
+    direction common_wall(room *r1, room *r2);
     maze *m_current_maze;
 };
 

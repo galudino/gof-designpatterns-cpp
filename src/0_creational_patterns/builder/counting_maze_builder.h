@@ -9,11 +9,11 @@ public:
     counting_maze_builder();
 
     virtual void build_maze();
-    virtual void build_room(int);
-    virtual void build_door(int, int);
+    virtual void build_room(int n);
+    virtual void build_door(int n1, int n2);
     virtual void add_wall(int, direction);
 
-    void get_counts(int &, int &) const;
+    void get_counts(int &rooms, int &doors) const;
 
 private:
     int m_doors;
