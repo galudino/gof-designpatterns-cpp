@@ -6,7 +6,8 @@
 class wall : public map_site {
 public:
     wall();
-    wall(const wall &);
+    wall(const wall &other);
+
     virtual wall *clone() const;
     virtual void enter();
 };

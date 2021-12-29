@@ -15,11 +15,11 @@ public:
     virtual room *make_room(int n) const;
     virtual door *make_door(room *r1, room *r2) const;
     
-    maze_factory(const maze_factory &f) = delete;
-    maze_factory(maze_factory &&f) = delete;
+    maze_factory(const maze_factory &other) = delete;
+    maze_factory(maze_factory &&other) = delete;
     
-    maze_factory &operator=(const maze_factory &f) = delete;
-    maze_factory &operator=(maze_factory &&f) = delete;
+    maze_factory &operator=(const maze_factory &other) = delete;
+    maze_factory &operator=(maze_factory &&other) = delete;
 protected:
     maze_factory();
 private:

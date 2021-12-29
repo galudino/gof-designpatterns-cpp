@@ -5,9 +5,10 @@
 
 class room_with_a_bomb : public room {
 public:
-    room_with_a_bomb(int = 0, bool bombed = false);
-    room_with_a_bomb(const room_with_a_bomb &);
-    bool has_bomb();
+    room_with_a_bomb(int n = 0, bool bombed = false) : room(n), m_bomb(bombed) { }
+    room_with_a_bomb(const room_with_a_bomb &other) : room(other), m_bomb(other.m_bomb) { }
+
+    bool has_bomb() const { return m_bomb; }
 
 private:
     bool m_bomb;

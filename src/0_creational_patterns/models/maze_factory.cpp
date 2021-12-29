@@ -14,13 +14,11 @@
 maze_factory *maze_factory::m_instance = 0;
 
 maze_factory::maze_factory() {
-    std::cout << "MazeFactory::MazeFactory()" << std::endl;
+    std::cout << "maze_factory::maze_factory()" << std::endl;
 }
 
 maze_factory *maze_factory::instance() {
-
     if (m_instance == 0) {
-
         const char *maze_style = getenv("MAZESTYLE");
 
         if (std::strcmp(maze_style, "bombed") == 0) {

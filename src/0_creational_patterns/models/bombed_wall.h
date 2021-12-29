@@ -6,10 +6,10 @@
 class bombed_wall : public wall {
 public:
     bombed_wall();
-    bombed_wall(const bombed_wall &);
+    bombed_wall(const bombed_wall &other);
 
     virtual wall *clone() const;
-    bool has_bomb() { return false; }
+    bool has_bomb() const { return false; }
 
 private:
     bool m_bomb;

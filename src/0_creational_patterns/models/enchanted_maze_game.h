@@ -1,6 +1,10 @@
 #include "maze_game.h"
 
-class enchanged_maze_game : public maze_game {
+#include "enchanted_room.h"
+#include "door_needing_spell.h"
+#include "spell.h"
+
+class enchanted_maze_game : public maze_game {
 public:
     enchanted_maze_game();
 

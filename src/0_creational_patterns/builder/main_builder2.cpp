@@ -1,7 +1,7 @@
-#include <iostream>
-
 #include "maze_game.h"
 #include "counting_maze_builder.h"
+
+#include <iostream>
 
 int main() {
     int rooms = 0;

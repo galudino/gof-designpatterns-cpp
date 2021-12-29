@@ -8,13 +8,13 @@ class door : public map_site {
 public:
     door();
     door(room *r1, room *r2);
-    door(const door &);
+    door(const door &other);
 
-    virtual void initialize(room *, room *);
+    virtual void initialize(room *r1, room *r2);
     virtual door *clone() const;
 
     virtual void enter();
-    room *other_side_from(room *) { return nullptr; }
+    room *other_side_from(room *r) { return nullptr; }
 
 private:
     room *m_room1;

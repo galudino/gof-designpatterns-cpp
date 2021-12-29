@@ -4,19 +4,24 @@
 #include "map_site.h"
 #include "maze_parts.h"
 
+#include <array>
+
 class room : map_site {
 public:
-    room(int n = 0);
+    room(int n = 0) : m_room_number(n) { }
 
-    virtual room *clone() const;
+    virtual room *clone() const { return new room(*this); }
 
-    void set_side(direction d, map_site *ms);
-    int room_number();
+    void set_side(direction d, map_site *ms) {
+        m_sides[d] = ms;
+    }
 
-    virtual void enter();
+    int room_number() const { return m_room_number; }
+
+    virtual void enter() { }
 
 private:
-    map_site *m_sides[4];
+    std::array<map_site *, 4> m_sides;
     int m_room_number;
 };
 

@@ -1,7 +1,7 @@
-#include <iostream>
-
 #include "maze_game.h"
 #include "standard_maze_builder.h"
+
+#include <iostream>
 
 class maze;
 
