@@ -1,4 +1,3 @@
-#include <iostream>
 #include "bombed_wall.h"
 #include "door.h"
 #include "maze.h"
@@ -6,6 +5,8 @@
 #include "maze_prototype_factory.h"
 #include "room_with_a_bomb.h"
 #include "wall.h"
+
+#include <iostream>
 
 int main() {
     maze_game game;
