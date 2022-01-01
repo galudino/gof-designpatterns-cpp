@@ -13,7 +13,7 @@ class door;
 class maze_prototype_factory : public maze_factory {
 public:
     maze_prototype_factory(maze *m, wall *w, room *r, door *d) :
-        m_prototype_maze(m), m_prototype_wall(w), m_prototype_room(r), m_prototype_door(d) { }
+        m_prototype_maze(m), m_prototype_room(r), m_prototype_wall(w), m_prototype_door(d) { }
 
     virtual maze *make_maze() const { return m_prototype_maze->clone(); }
     virtual room *make_room(int n) const { return m_prototype_room->clone(); }

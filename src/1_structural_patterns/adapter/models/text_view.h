@@ -18,7 +18,7 @@ public:
     }
 
     virtual bool empty() const {
-        m_width == 0 || m_height == 0;
+        return m_width == 0 || m_height == 0;
     }
 
 private:

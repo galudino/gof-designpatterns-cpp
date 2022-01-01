@@ -4,6 +4,7 @@
 #include "point.h"
 #include "shape.h"
 #include "text_view.h"
+#include "text_manipulator.h"
 
 class manipulator;
 
