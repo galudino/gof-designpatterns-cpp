@@ -8,8 +8,8 @@ class room;
 
 class bombed_maze_factory : public maze_factory {
 public:
-    wall *make_wall() const;
-    room *make_room(int n) const;
+    wall *make_wall() const override;
+    room *make_room(int n) const override;
 };
 
 #endif /* BOMBED_MAZEFACTORY_H */

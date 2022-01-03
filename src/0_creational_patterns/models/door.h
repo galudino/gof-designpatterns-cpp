@@ -10,15 +10,15 @@ public:
     door(room *r1, room *r2);
     door(const door &other);
 
-    virtual void initialize(room *r1, room *r2);
+    virtual void initialize(room *r1, room *r2); // Do we need this?
     virtual door *clone() const;
 
-    virtual void enter();
+    virtual void enter() { }
     room *other_side_from(room *r) { return nullptr; }
 
 private:
-    room *m_room1;
-    room *m_room2;
+    room *m_room1 = nullptr;
+    room *m_room2 = nullptr;
 };
 
 #endif /* DOOR_H */

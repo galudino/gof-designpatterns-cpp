@@ -9,6 +9,6 @@ class bombed_maze_game : public maze_game {
 public:
     bombed_maze_game();
 
-    virtual wall *make_wall() const { return new bombed_wall; }
-    virtual room *make_room(int n) const { return new room_with_a_bomb(n); }
+    wall *make_wall() const override { return new bombed_wall; }
+    room *make_room(int n) const override { return new room_with_a_bomb(n); }
 };

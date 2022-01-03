@@ -4,16 +4,14 @@
 #include <iostream>
 
 int main() {
-    int rooms = 0;
-    int doors = 0;
-
-    maze_game game;
-    counting_maze_builder builder;
+    auto game = maze_game();
+    auto builder = counting_maze_builder();
 
     game.create_maze(builder);
-    builder.get_counts(rooms, doors);
+    
+    auto counts = builder.counts();
 
-    std::cout << "The maze has " << rooms 
-              << " rooms and "  << doors 
+    std::cout << "The maze has " << counts.first
+              << " rooms and "  << counts.second
               << " doors" << std::endl;
 }

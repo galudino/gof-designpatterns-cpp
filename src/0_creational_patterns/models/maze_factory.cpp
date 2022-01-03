@@ -29,10 +29,12 @@ maze_factory *maze_factory::instance() {
 
             // ... other possible subclasses
 
-        } else { // default
+        } else {
+            // default
             m_instance = new maze_factory;
         }
     }
+    
     return m_instance;
 }
 

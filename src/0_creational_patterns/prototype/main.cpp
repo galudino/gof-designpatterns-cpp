@@ -9,21 +9,21 @@
 #include <iostream>
 
 int main() {
-    maze_game game;
+    auto game = maze_game();
 
-    maze_prototype_factory simple_maze_factory(new maze,
-                                               new wall,
-                                               new room,
-                                               new door);
+    auto simple_maze_factory = maze_prototype_factory(new maze,
+                                                      new wall,
+                                                      new room,
+                                                      new door);
     
-    maze *m = game.create_maze(simple_maze_factory);
+    auto m = game.create_maze(simple_maze_factory);
     
     std::cout << m << std::endl;
 
-    maze_prototype_factory bombed_maze_factory(new maze,
-                                               new bombed_wall,
-                                               new room_with_a_bomb,
-                                               new door);
+    auto bombed_maze_factory = maze_prototype_factory(new maze,
+                                                      new bombed_wall,
+                                                      new room_with_a_bomb,
+                                                      new door);
 
     return 0;
 }

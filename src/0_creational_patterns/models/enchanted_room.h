@@ -7,11 +7,12 @@ class spell;
 
 class enchanted_room : public room {
 public:
-    enchanted_room(int n, spell *spell);
-    spell *get_spell() const { return m_spell; }
+    enchanted_room(int n, spell *spell) : room(n), m_spell(spell) { }
+    
+    class spell *spell() const { return m_spell; }
 
 private:
-    spell *m_spell;
+    class spell *m_spell = nullptr;
 };
 
 #endif /* ENCHANTED_ROOM_H */

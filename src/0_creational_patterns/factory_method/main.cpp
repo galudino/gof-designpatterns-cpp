@@ -5,11 +5,13 @@
 #include <iostream>
 
 int main() {
-    maze_game game;
-    maze *m = game.create_maze();
+    auto game = maze_game();
+    
+    auto m = game.create_maze();
     std::cout << m << std::endl;
 
-    bombed_maze_game bombed_game;
-    maze *bm = bombed_game.create_maze();
+    auto bombed_game = bombed_maze_game();
+    auto bm = bombed_game.create_maze();
+    
     std::cout << bm << std::endl;
 }

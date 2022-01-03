@@ -9,6 +9,8 @@ class door;
 class maze_factory {
 public:
     static maze_factory *instance();
+    
+    virtual ~maze_factory() { }
 
     virtual maze *make_maze() const;
     virtual wall *make_wall() const;

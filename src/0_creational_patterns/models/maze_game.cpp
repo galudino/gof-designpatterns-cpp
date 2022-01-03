@@ -6,12 +6,12 @@
 #include <iostream>
 
 maze *maze_game::create_maze() {
-    maze *m = make_maze();
+    auto m = make_maze();
 
-    room *r1 = make_room(1);
-    room *r2 = make_room(2);
+    auto r1 = make_room(1);
+    auto r2 = make_room(2);
     
-    door *d = make_door(r1, r2);
+    auto d = make_door(r1, r2);
 
     m->add_room(r1);
     m->add_room(r2);
@@ -30,10 +30,12 @@ maze *maze_game::create_maze() {
 }
 
 maze *maze_game::create_maze(maze_factory &factory) {
-    maze *m = factory.make_maze();
-    room *r1 = factory.make_room(1);
-    room *r2 = factory.make_room(2);
-    door *d = factory.make_door(r1, r2);
+    auto m = factory.make_maze();
+    
+    auto r1 = factory.make_room(1);
+    auto r2 = factory.make_room(2);
+    
+    auto d = factory.make_door(r1, r2);
 
     m->add_room(r1);
     m->add_room(r2);
@@ -58,7 +60,7 @@ maze *maze_game::create_maze(maze_builder &builder) {
     builder.build_room(2);
     builder.build_door(1, 2);
 
-    return builder.get_maze();
+    return builder.maze();
 }
 
 maze *maze_game::create_complex_maze(maze_builder &builder) {
@@ -66,5 +68,5 @@ maze *maze_game::create_complex_maze(maze_builder &builder) {
     // ...
     builder.build_room(1001);
 
-    return builder.get_maze();
+    return builder.maze();
 }

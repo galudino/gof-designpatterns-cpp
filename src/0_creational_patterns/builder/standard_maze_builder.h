@@ -9,17 +9,19 @@ class maze;
 
 class standard_maze_builder : public maze_builder {
 public:
-    standard_maze_builder();
+    ~standard_maze_builder();
+    
+    void build_maze() override;
+    void build_room(int n) override;
+    void build_door(int n1, int n2) override;
 
-    virtual void build_maze();
-    virtual void build_room(int n);
-    virtual void build_door(int n1, int n2);
-
-    virtual maze *get_maze();
+    class maze *maze() const override {
+        return m_current_maze;
+    }
 
 private:
     direction common_wall(room *r1, room *r2);
-    maze *m_current_maze;
+    class maze *m_current_maze = nullptr;
 };
 
 #endif /* STANDARD_MAZE_BUILDER_H */

@@ -9,6 +9,7 @@
 class room : map_site {
 public:
     room(int n = 0) : m_room_number(n) { }
+    ~room() { }
 
     virtual room *clone() const { return new room(*this); }
 
@@ -20,9 +21,10 @@ public:
 
     virtual void enter() { }
 
+    friend class standard_maze_builder;
 private:
-    std::array<map_site *, 4> m_sides;
-    int m_room_number;
+    std::array<map_site *, 4> m_sides { nullptr, nullptr, nullptr, nullptr };
+    int m_room_number = 0;
 };
 
 #endif /* ROOM_H */

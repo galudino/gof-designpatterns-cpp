@@ -5,14 +5,16 @@ class maze;
 
 class maze_builder {
 public:
-    virtual void build_maze() {}
-    virtual void build_room(int n) {}
-    virtual void build_door(int n1, int n2) {}
+    virtual ~maze_builder() { }
+    
+    virtual void build_maze() { }
+    virtual void build_room(int n) { }
+    virtual void build_door(int n1, int n2) { }
 
-    virtual maze *get_maze() { return 0; }
+    virtual class maze *maze() const { return nullptr; }
 
 protected:
-    maze_builder();
+    maze_builder() { }
 };
 
 #endif /* MAZE_BUILDER_H */

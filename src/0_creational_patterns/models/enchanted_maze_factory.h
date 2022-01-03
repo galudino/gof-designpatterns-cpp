@@ -14,11 +14,11 @@ class enchanted_maze_factory : public maze_factory {
 public:
     enchanted_maze_factory();
 
-    virtual room *make_room(int n) const {
+    room *make_room(int n) const override {
         return new enchanted_room(n, cast_spell());
     }
 
-    virtual door *make_door(room *r1, room *r2) const {
+    door *make_door(room *r1, room *r2) const override {
         return new door_needing_spell(r1, r2);
     }
 

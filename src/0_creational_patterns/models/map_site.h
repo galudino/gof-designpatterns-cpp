@@ -3,6 +3,7 @@
 
 class map_site {
 public:
+    virtual ~map_site() { }
     virtual void enter() = 0;
 };
 

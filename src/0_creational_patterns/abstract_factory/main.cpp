@@ -3,10 +3,10 @@
 #include "enchanted_maze_factory.h"
 
 int main() {
-    maze_game game;
+    auto game = maze_game();
 
-    bombed_maze_factory factory_bombed;
-    enchanted_maze_factory factory_enchanted;
+    auto factory_bombed = bombed_maze_factory();
+    auto factory_enchanted = enchanted_maze_factory();
     
     game.create_maze(factory_bombed);
     game.create_maze(factory_enchanted);

@@ -7,11 +7,12 @@ class maze;
 
 int main() {
     maze *maze = nullptr;
-    maze_game game;
-    standard_maze_builder builder;
+    
+    auto game = maze_game();
+    auto builder = standard_maze_builder();
 
     game.create_maze(builder);
-    maze = builder.get_maze();
+    maze = builder.maze();
 
     std::cout << maze << std::endl;
 }

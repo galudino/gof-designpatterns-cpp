@@ -3,21 +3,22 @@
 
 #include "maze_builder.h"
 #include "maze_parts.h"
+#include <utility>
 
 class counting_maze_builder : public maze_builder {
 public:
-    counting_maze_builder();
+    void build_maze() override { }
+    void build_room(int n) override { ++m_rooms; }
+    void build_door(int n1, int n2) override { ++m_doors; }
+    void add_wall(int n, direction d) { }
 
-    virtual void build_maze();
-    virtual void build_room(int n);
-    virtual void build_door(int n1, int n2);
-    virtual void add_wall(int, direction);
-
-    void get_counts(int &rooms, int &doors) const;
+    std::pair<int, int> counts() const {
+        return std::make_pair(m_rooms, m_doors);
+    }
 
 private:
-    int m_doors;
-    int m_rooms;
+    int m_doors = 0;
+    int m_rooms = 0;
 };
 
 #endif /* COUNTING_MAZE_BUILDER_H */
