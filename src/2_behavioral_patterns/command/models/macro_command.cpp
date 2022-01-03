@@ -9,6 +9,3 @@ void macro_command::execute() {
     }
 }
 
-void macro_command::add(command *c) { m_commands->append(c); }
-
-void macro_command::remove(command *c) { m_commands->remove(c); }

@@ -4,17 +4,17 @@
 #include "program_node.h"
 //#include "list.h"
 
-template <class Item>
+template <typename T>
 class list;
 
 class expression_node : public program_node {
 public:
-    void traverse(code_generator &cg);
-    void add(program_node *) {}
-    void remove(program_node *) {}
+    void traverse(code_generator &cg) override;
+    void add(program_node *node) override {}
+    void remove(program_node *node) override {}
 
 protected:
-    list<program_node *> *m_children;
+    list<program_node *> *m_children = nullptr;
 };
 
 #endif /* EXPRESSION_NODE_H */

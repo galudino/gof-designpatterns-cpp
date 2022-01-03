@@ -3,10 +3,8 @@
 
 class visual_component {
 public:
-    visual_component();
-
-    virtual void draw();
-    virtual void resize();
+    virtual void draw() { }
+    virtual void resize() { }
     // ...
 };
 

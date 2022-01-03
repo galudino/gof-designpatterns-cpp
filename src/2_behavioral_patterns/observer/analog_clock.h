@@ -6,9 +6,10 @@
 
 class analog_clock : public widget, public observer {
 public:
-    analog_clock(clock_timer *);
-    virtual void update(subject *);
-    virtual void draw();
+    analog_clock(clock_timer *c) { }
+    
+    void update(subject *s) override { }
+    void draw() override { }
     // ...
 };
 

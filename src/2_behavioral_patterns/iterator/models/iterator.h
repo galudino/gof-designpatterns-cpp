@@ -1,7 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-template <class Item>
+template <typename T>
 class iterator {
 public:
     virtual ~iterator() {}
@@ -9,7 +9,7 @@ public:
     virtual void first() = 0;
     virtual void next() = 0;
     virtual bool done() const = 0;
-    virtual Item current_item() const = 0;
+    virtual T current_item() const = 0;
 
 protected:
     iterator() {}

@@ -5,13 +5,13 @@
 class macro_command : public command {
 public:
     macro_command();
-    virtual ~macro_command();
+    ~macro_command();
 
-    virtual void add(command *);
-    virtual void remove(command *);
+    virtual void add(command *c) { m_commands->append(c); }
+    virtual void remove(command *c) { m_commands->remove(c); }
 
-    virtual void execute();
+    void execute() override;
 
 private:
-    list<command *> *m_commands;
+    list<command *> *m_commands = nullptr;
 };

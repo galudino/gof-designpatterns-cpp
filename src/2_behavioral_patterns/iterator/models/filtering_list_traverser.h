@@ -1,26 +1,26 @@
 #ifndef FILTERING_LIST_TRAVERSER_H
 #define FILTERING_LIST_TRAVERSER_H
 
-template <class Item>
+template <typename T>
 class filtering_list_traverser {
 public:
-    filtering_list_traverser(list<Item> *l);
+    filtering_list_traverser(list<T> *l);
     bool traverse();
 
 protected:
-    virtual bool process_item(const Item &) = 0;
-    virtual bool test_item(const Item &) = 0;
+    virtual bool process_item(const T &item) = 0;
+    virtual bool test_item(const T &item) = 0;
 
 private:
-    list_iterator<Item> m_iterator;
+    list_iterator<T> m_iterator;
 };
 
-template <class Item>
-void filtering_list_traverser<Item>::traverse() {
-    bool result = false;
+template <typename T>
+void filtering_list_traverser<T>::traverse() {
+    auto result = false;
 
     for (m_iterator.first(); !m_iterator.done(); m_iterator.next()) {
-        if (test_item(m_iterator.CurrentItem())) {
+        if (test_item(m_iterator.current_item())) {
             result = process_item(m_iterator.current_item());
 
             if (result == false) {
@@ -28,6 +28,7 @@ void filtering_list_traverser<Item>::traverse() {
             }
         }
     }
+    
     return result;
 }
 

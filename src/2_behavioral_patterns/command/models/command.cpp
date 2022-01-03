@@ -2,6 +2,6 @@
 
 #include <iostream>
 
-command::command() { std::cout << "Command::Command()" << std::endl; }
+command::command() { std::cout << "command::command()" << std::endl; }
 
-command::~command() { std::cout << "Command::~Command()" << std::endl; }
+command::~command() { std::cout << "command::~command()" << std::endl; }

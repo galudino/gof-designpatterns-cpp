@@ -3,13 +3,13 @@
 
 #include "list.h"
 
-template <class Item>
+template <typename T>
 class skip_list_iterator;
 
-template <class Item>
-class skip_list : public list<Item> {
+template <typename T>
+class skip_list : public list<T> {
 public:
-    iterator<Item> *create_iterator() const {
+    iterator<T> *create_iterator() const {
         return new skip_list_iterator(this);
     }
 };

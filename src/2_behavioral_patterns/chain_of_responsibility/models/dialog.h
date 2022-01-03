@@ -6,7 +6,7 @@
 
 class dialog : public widget {
 public:
-    dialog(help_handler *h, topic t = NO_HELP_TOPIC);
+    dialog(help_handler *h, topic t = topic::NO_HELP_TOPIC);
     virtual void handle_help();
 
     // widget operations that dialog overrides...

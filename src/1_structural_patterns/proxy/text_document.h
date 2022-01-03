@@ -5,9 +5,9 @@
 
 class text_document {
 public:
-    text_document();
+    text_document() { }
 
-    void insert(graphic *);
+    void insert(graphic *g) { }
     // ...
 };
 

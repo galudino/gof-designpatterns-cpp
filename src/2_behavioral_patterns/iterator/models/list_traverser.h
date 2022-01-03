@@ -3,22 +3,22 @@
 
 #include "list.h"
 
-template <class Item>
+template <typename T>
 class list_traverser {
 public:
-    list_traverser(list<Item> *l) : m_iterator(l) {}
+    list_traverser(list<T> *l) : m_iterator(l) {}
     bool traverse();
 
 protected:
-    virtual bool process_item(const Item &) = 0;
+    virtual bool process_item(const T &item) = 0;
 
 private:
-    list_iterator<Item> m_iterator;
+    list_iterator<T> m_iterator;
 };
 
-template <class Item>
-bool list_traverser<Item>::traverse() {
-    bool result = false;
+template <typename T>
+bool list_traverser<T>::traverse() {
+    auto result = false;
 
     for (m_iterator.first(); !m_iterator.done(); m_iterator.next()) {
         result = process_item(m_iterator.current_item());

@@ -15,7 +15,7 @@ public:
 
     float y() const;
     void set_y(float y);
-    
+
     point &operator+=(const point &rhs);
     point &operator-=(const point &rhs);
     point &operator*=(const point &rhs);
@@ -35,8 +35,8 @@ public:
     friend std::istream &operator>>(std::istream &is, point &p);
 
 private:
-    float m_x;
-    float m_y;
+    float m_x = 0.0f;
+    float m_y = 0.0f;
 };
 
 #endif /* POINT_H */

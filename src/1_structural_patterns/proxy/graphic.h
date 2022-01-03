@@ -13,7 +13,7 @@ public:
     virtual void draw(const point &at) = 0;
     virtual void handle_mouse(event &event) = 0;
 
-    virtual const point &get_extent() = 0;
+    virtual point &extent() = 0;
 
     virtual void load(std::istream &from) = 0;
     virtual void save(std::ostream &to) = 0;

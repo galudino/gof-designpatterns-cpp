@@ -1,15 +1,15 @@
 #include "application.h"
 #include "button.h"
 #include "dialog.h"
+#include "request.h"
 
 int main() {
-    constexpr topic PRINT_TOPIC = 1;
-    constexpr topic PAPER_ORIENTATION_TOPIC = 2;
-    constexpr topic APPLICATION_TOPIC = 3;
-
-    application *app = new application(APPLICATION_TOPIC);
-    dialog *d = new dialog(app, PRINT_TOPIC);
-    button *b = new button(d, PAPER_ORIENTATION_TOPIC);
-
+    // TODO: use smart pointers
+    auto app = new application(topic::APPLICATION_TOPIC);
+    auto d = new dialog(app, topic::PRINT_TOPIC);
+    auto b = new button(d, topic::PAPER_ORIENTATION_TOPIC);
+    
     b->handle_help();
+    
+    return 0;
 }

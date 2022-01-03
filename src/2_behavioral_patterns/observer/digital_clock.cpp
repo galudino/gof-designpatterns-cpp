@@ -2,12 +2,13 @@
 #include "clock_timer.h"
 #include <iostream>
 
-digital_clock::digital_clock(clock_timer *s) {
-    m_subject = s;
+digital_clock::digital_clock(clock_timer *c) : m_subject(c) {
     m_subject->attach(this);
 }
 
-digital_clock::~digital_clock() { m_subject->detach(this); }
+digital_clock::~digital_clock() {
+    m_subject->detach(this);
+}
 
 void digital_clock::update(subject *s) {
     if (s == m_subject) {

@@ -7,10 +7,8 @@ class event;
 class point;
 
 image::image(const char *file) {
-    std::strcpy(m_filename, file);
+    m_filename = std::string(file);
 }
-
-image::~image() { delete m_filename; }
 
 void image::draw(const point &at) {
 
@@ -20,7 +18,7 @@ void image::handle_mouse(event &event) {
 
 }
 
-const point &image::get_extent() { return m_extent; }
+point &image::extent() { return m_extent; }
 
 void image::load(std::istream &from) {
 

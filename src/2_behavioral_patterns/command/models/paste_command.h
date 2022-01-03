@@ -7,12 +7,11 @@ class document;
 
 class paste_command : public command {
 public:
-    paste_command(document *);
+    paste_command(document *d) : m_document(d) { }
 
-    virtual void execute();
-
+    void execute() override;
 private:
-    document *m_document;
+    document *m_document = nullptr;
 };
 
 #endif // PASTE_COMMAND_H

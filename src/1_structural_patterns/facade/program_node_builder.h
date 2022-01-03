@@ -7,30 +7,30 @@ class program_node_builder {
 public:
     program_node_builder() {}
 
-    virtual program_node *NewVariable(const char *variableName) const {
+    virtual program_node *new_variable(const char *variable_name) const {
         return nullptr;
     }
 
-    virtual program_node *NewAssignment(program_node *variable,
+    virtual program_node *new_assignment(program_node *variable,
                                        program_node *expression) const {
         return nullptr;
     }
 
-    virtual program_node *NewReturnStatement(program_node *value) const {
+    virtual program_node *new_return_statement(program_node *value) const {
         return nullptr;
     }
 
-    virtual program_node *NewCondition(program_node *condition,
-                                      program_node *truePart,
-                                      program_node *falsePart) const {
+    virtual program_node *new_condition(program_node *condition,
+                                      program_node *true_part,
+                                      program_node *false_part) const {
         return nullptr;
     }
     // ...
 
-    program_node *GetRootNode() { return _node; }
+    program_node *root_node() const { return m_node; }
 
 private:
-    program_node *_node;
+    program_node *m_node = nullptr;
 };
 
 #endif /* PROGRAM_NODE_BUILDER_H */

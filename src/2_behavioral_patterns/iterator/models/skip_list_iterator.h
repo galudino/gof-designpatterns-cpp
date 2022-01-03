@@ -4,10 +4,10 @@
 #include "list.h"
 #include "skip_list.h"
 
-template <class Item>
-class skip_list_iterator : public list_iterator<Item> {
+template <typename T>
+class skip_list_iterator : public list_iterator<T> {
 public:
-    skip_list_iterator(const list<Item> *l) : list_iterator<Item>(l) {}
+    skip_list_iterator(const list<T> *l) : list_iterator<T>(l) {}
 };
 
 #endif /* SKIP_LIST_ITERATOR_H */

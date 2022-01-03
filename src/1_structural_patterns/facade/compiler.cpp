@@ -6,13 +6,15 @@
 #include "risc_code_generator.h"
 
 void compiler::compile(std::istream &input, bytecode_stream &output) {
-    scanner sc(input);
-    program_node_builder builder;
+    auto sc = scanner(input);
+    auto builder = program_node_builder();
+    
     parser parser;
 
     parser.parse(sc, builder);
 
-    risc_code_generator generator(output);
-    program_node *node = builder.GetRootNode();
+    auto generator = risc_code_generator(output);
+    auto node = builder.root_node();
+    
     node->traverse(generator);
 }

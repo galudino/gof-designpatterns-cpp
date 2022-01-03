@@ -5,15 +5,13 @@
 
 class border_decorator : public decorator {
 public:
-    border_decorator(visual_component *, int borderWidth);
+    border_decorator(visual_component *component, int border_width) : decorator(component), m_width(border_width) { }
 
-    virtual void draw();
-
+    void draw() override;
 private:
-    void draw_border(int);
-
+    void draw_border(int width);
 private:
-    int m_width;
+    int m_width = 0;
 };
 
 #endif /* BORDER_DECORATOR_H */

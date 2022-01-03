@@ -1,32 +1,35 @@
 #include "image_proxy.h"
 #include "point.h"
-#include <cstring>
+#include <string>
 
-image_proxy::image_proxy(const char *fileName) {
-    m_filename = strdup(fileName);
+image_proxy::image_proxy(const char *filename) {
+    m_filename = std::string(filename);
     m_extent = point::zero;
-    m_image = 0;
+    m_image = nullptr;
 }
 
-image_proxy::~image_proxy() {}
+image_proxy::~image_proxy() {
+    delete m_image;
+}
 
-image *image_proxy::get_image() {
+class image *image_proxy::image() const {
     if (m_image == nullptr) {
-        m_image = new image(m_filename);
+        //m_image = new class image(m_filename.c_str());
     }
     return m_image;
 }
 
-const point &image_proxy::get_extent() {
+point &image_proxy::extent() {
     if (m_extent == point::zero) {
-        m_extent = get_image()->get_extent();
+        //m_extent = image()->extent();
+        m_extent = image()->extent();
     }
     return m_extent;
 }
 
-void image_proxy::draw(const point &at) { get_image()->draw(at); }
+void image_proxy::draw(const point &at) { image()->draw(at); }
 
-void image_proxy::handle_mouse(event &event) { get_image()->handle_mouse(event); }
+void image_proxy::handle_mouse(event &event) { image()->handle_mouse(event); }
 
 void image_proxy::save(std::ostream &to) { to << m_extent << m_filename; }
 

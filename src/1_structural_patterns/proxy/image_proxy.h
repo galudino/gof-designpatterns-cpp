@@ -9,24 +9,24 @@ class event;
 
 class image_proxy : public graphic {
 public:
-    image_proxy(const char *imagefile);
+    image_proxy(const char *filename);
+    
     virtual ~image_proxy();
+    void draw(const point &at) override;
+    void handle_mouse(event &event) override;
 
-    virtual void draw(const point &at);
-    virtual void handle_mouse(event &event);
+    point &extent() override;
 
-    virtual const point &get_extent();
-
-    virtual void load(std::istream &from);
-    virtual void save(std::ostream &to);
+    void load(std::istream &from) override;
+    void save(std::ostream &to) override;
 
 protected:
-    image *get_image();
+    class image *image() const;
 
 private:
-    image *m_image;
+    class image *m_image = nullptr;
     point m_extent;
-    char *m_filename;
+    std::string m_filename;
 };
 
 #endif /* IMAGE_PROXY_H */

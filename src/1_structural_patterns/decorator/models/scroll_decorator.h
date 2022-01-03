@@ -5,7 +5,7 @@
 
 class scroll_decorator : public decorator {
 public:
-    scroll_decorator(visual_component *);
+    scroll_decorator(visual_component *contents) : decorator(contents) { }
 };
 
 #endif /* SCROLL_DECORATOR_H */

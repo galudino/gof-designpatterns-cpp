@@ -7,8 +7,8 @@ class bytecode_stream;
 
 class code_generator {
 public:
-    virtual void visit(statement_node *) {}
-    virtual void visit(expression_node *) {}
+    virtual void visit(statement_node *node) {}
+    virtual void visit(expression_node *node) {}
     // ...
 protected:
     code_generator(bytecode_stream &bs) : m_output(bs) {}

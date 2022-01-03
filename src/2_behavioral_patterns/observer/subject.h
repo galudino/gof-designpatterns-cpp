@@ -7,17 +7,17 @@ class observer;
 
 class subject {
 public:
-    virtual ~subject();
+    virtual ~subject() { }
 
-    virtual void attach(observer *);
-    virtual void detach(observer *);
+    virtual void attach(observer *o) { m_observers->append(o); }
+    virtual void detach(observer *o) { m_observers->remove(o); }
     virtual void notify();
 
 protected:
     subject();
 
 private:
-    list<observer *> *m_observers;
+    list<observer *> *m_observers = nullptr;
 };
 
 #endif /* SUBJECT_H */

@@ -10,8 +10,9 @@ class expression_node;
 class risc_code_generator : public code_generator {
 public:
     risc_code_generator(bytecode_stream &bs) : code_generator(bs) {}
-    virtual void visit(statement_node *) {}
-    virtual void visit(expression_node *) {}
+    
+    void visit(statement_node *node) override {}
+    void visit(expression_node *node) override {}
     // ...
 };
 

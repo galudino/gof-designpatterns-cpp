@@ -2,4 +2,4 @@
 
 #include "employee.h"
 
-void employee::print() const { std::cout << "Employee " << this << std::endl; }
+void employee::print() const { std::cout << "employee " << this << std::endl; }

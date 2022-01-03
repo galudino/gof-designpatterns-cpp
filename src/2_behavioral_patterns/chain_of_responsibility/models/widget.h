@@ -5,7 +5,7 @@
 
 class widget : public help_handler {
 protected:
-    widget(widget *parent, topic t = NO_HELP_TOPIC);
+    widget(widget *parent, topic t = topic::NO_HELP_TOPIC);
 
 private:
     widget *m_parent;

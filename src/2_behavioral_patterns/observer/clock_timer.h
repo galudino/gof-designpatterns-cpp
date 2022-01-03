@@ -5,11 +5,9 @@
 
 class clock_timer : public subject {
 public:
-    clock_timer();
-
-    virtual int hour();
-    virtual int minute();
-    virtual int second();
+    virtual int hour() { return 0; }
+    virtual int minute() { return 0; }
+    virtual int second() { return 0; }
 
     void tick();
 };

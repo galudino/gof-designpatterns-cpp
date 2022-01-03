@@ -5,7 +5,7 @@
 
 class print_request : public request {
 public:
-    request_type kind() { return PRINT; };
+    request_type kind() override { return request_type::PRINT; };
 };
 
 #endif /* REQUEST_H */

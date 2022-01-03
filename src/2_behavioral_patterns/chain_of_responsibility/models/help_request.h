@@ -5,7 +5,7 @@
 
 class help_request : public request {
 public:
-    request_type kind() { return Help; };
+    request_type kind() override { return request_type::HELP; };
 };
 
 #endif /* REQUEST_H */

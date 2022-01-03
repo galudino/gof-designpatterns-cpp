@@ -5,13 +5,18 @@
 
 class decorator : public visual_component {
 public:
-    decorator(visual_component *);
+    decorator(visual_component *contents) : m_component(contents) { }
 
-    virtual void draw();
-    virtual void resize();
+    void draw() override {
+        m_component->draw();
+    }
+    
+    void resize() override {
+        m_component->resize();
+    }
     // ...
 private:
-    visual_component *m_component;
+    visual_component *m_component = nullptr;
 };
 
 #endif /* DECORATOR_H */

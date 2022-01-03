@@ -4,16 +4,16 @@
 #include "iterator.h"
 #include "list.h"
 
-template <class Item>
-class reverse_list_iterator : public iterator<Item> {
+template <typename T>
+class reverse_list_iterator : public iterator<T> {
 public:
-    reverse_list_iterator(const list<Item> *l) : m_list(l), m_current(m_list->count() - 1) {}
+    reverse_list_iterator(const list<T> *l) : m_list(l), m_current(m_list->count() - 1) {}
     
     virtual void first() { m_current = m_list->count() - 1; }
     virtual void next() { --m_current; }
     virtual bool done() const { return m_current < 0; }
     
-    virtual Item current_item() const {
+    virtual T current_item() const {
         if (done()) {
             throw std::length_error("");
         }
@@ -22,8 +22,8 @@ public:
     }
 
 private:
-    const list<Item> *m_list;
-    long m_current;
+    const list<T> *m_list = nullptr;
+    long m_current = 0L;
 };
 
 #endif /* REVERSE_LIST_ITERATOR_H */

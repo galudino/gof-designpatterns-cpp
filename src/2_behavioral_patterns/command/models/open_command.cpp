@@ -3,16 +3,24 @@
 #include "application.h"
 #include "document.h"
 
-open_command::open_command(application *a) { m_application = a; }
+#include <stdexcept>
 
 void open_command::execute() {
-    const char *name = AskUser();
-
-    if (name != 0) {
-        document *d = new document(name);
-        m_application->add(d);
-        d->open();
+    auto name = std::string();
+    try {
+        name = ask_user();
+    } catch (std::exception e) {
+        
     }
+    
+    auto d = new document(name);
+    m_application->add(d);
+    d->open();
 }
 
-const char *open_command::AskUser() { return "SomeFileName"; }
+std::string open_command::ask_user() {
+    if (false) {
+        throw std::exception();
+    }
+    return "some_file_name.extension";
+}

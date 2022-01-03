@@ -5,7 +5,7 @@
 
 class button : public widget {
 public:
-    button(widget *d, topic t = NO_HELP_TOPIC);
+    button(widget *d, topic t = topic::NO_HELP_TOPIC);
 
     virtual void handle_help();
     // Widget operations that Button overrides...

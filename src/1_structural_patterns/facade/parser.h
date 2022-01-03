@@ -8,7 +8,7 @@ public:
     parser() {}
     virtual ~parser() {}
 
-    virtual void parse(scanner &, program_node_builder &) {}
+    virtual void parse(scanner &sc, program_node_builder &builder) {}
 };
 
 #endif /* PARSER_H */

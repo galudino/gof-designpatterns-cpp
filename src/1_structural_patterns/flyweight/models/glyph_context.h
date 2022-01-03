@@ -6,14 +6,14 @@ class font;
 
 class glyph_context {
 public:
-    glyph_context();
-    virtual ~glyph_context();
+    glyph_context() { }
+    virtual ~glyph_context() { }
 
-    virtual void next(int step = 1);
-    virtual void insert(int quantity = 1);
+    virtual void next(int step = 1) { }
+    virtual void insert(int quantity = 1) { }
 
-    virtual font *get_font();
-    virtual void set_font(font *, int span = 1);
+    virtual font *font() const { return nullptr; }
+    virtual void set_font(class font *f, int span = 1) { }
 
     int index() const { return m_index; }
     b_tree *fonts() const { return m_fonts; }

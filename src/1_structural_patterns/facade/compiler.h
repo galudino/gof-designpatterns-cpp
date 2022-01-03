@@ -6,9 +6,7 @@
 
 class compiler {
 public:
-    compiler();
-
-    virtual void compile(std::istream &, bytecode_stream &);
+    virtual void compile(std::istream &input, bytecode_stream &output);
 };
 
 #endif /* COMPILER_H */

@@ -4,14 +4,14 @@
 #include "column.h"
 
 glyph_factory::glyph_factory() {
-    for (int i = 0; i < NCHARCODES; ++i) {
-        m_character[i] = 0;
+    for (auto &character : m_character) {
+        character = nullptr;
     }
 }
 
 glyph_factory::~glyph_factory() {
-    for (auto i = 0; i < sizeof m_character / sizeof *m_character; i++) {
-        delete m_character[i];
+    for (auto character : m_character) {
+        delete character;
     }
 }
 

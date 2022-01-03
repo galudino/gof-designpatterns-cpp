@@ -6,10 +6,10 @@ class component;
 
 class composition {
 public:
-    composition(compositor *);
+    composition(compositor *c) : m_compositor(c) { }
     void repair();
 
-    compositor *get_compositor() const { return m_compositor; }
+    class compositor *compositor() const { return m_compositor; }
     component *components() const { return m_components; }
     
     int component_count() const { return m_component_count; }
@@ -17,13 +17,13 @@ public:
     int *line_breaks() const { return m_line_breaks; }
     int line_count() const { return m_line_count; }
 private:
-    compositor *m_compositor;
-    component *m_components;
+    class compositor *m_compositor = nullptr;
+    component *m_components = nullptr;
     
-    int m_component_count;
-    int m_line_width;           // the composition's line width
-    int *m_line_breaks;         // linebreak position in components
-    int m_line_count;
+    int m_component_count = 0;
+    int m_line_width = 0;                   // the composition's line width
+    int *m_line_breaks = nullptr;           // linebreak position in components
+    int m_line_count = 0;
 };
 
 #endif // COMPOSITION_H

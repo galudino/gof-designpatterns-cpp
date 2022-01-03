@@ -17,8 +17,8 @@ protected:
         return m_count < m_total;
     }
 private:
-    int m_total;
-    int m_count;
+    int m_total = 0;
+    int m_count = 0;
 };
 
 

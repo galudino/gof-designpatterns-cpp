@@ -9,17 +9,18 @@ class subject;
 
 class digital_clock : public widget, public observer {
 public:
-    digital_clock(clock_timer *);
+    digital_clock(clock_timer *c);
+    
     virtual ~digital_clock();
-
-    virtual void update(subject *);
+    
+    void update(subject *s) override;
     // overrides observer operation
 
-    virtual void draw();
+    void draw() override;
     // overrides widget operation;
     // defines how to draw the digital clock
 private:
-    clock_timer *m_subject;
+    clock_timer *m_subject = nullptr;
 };
 
 #endif /* DIGITAL_CLOCK_H */

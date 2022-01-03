@@ -1,7 +1,7 @@
 #ifndef REQUEST_H
 #define REQUEST_H
 
-enum request_type { HELP, PRINT, PREVIEW };
+enum class request_type { HELP, PRINT, PREVIEW };
 
 class request {
 public:

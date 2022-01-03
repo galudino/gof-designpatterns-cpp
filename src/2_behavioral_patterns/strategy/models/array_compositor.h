@@ -5,10 +5,12 @@
 
 class array_compositor : public compositor {
 public:
-    array_compositor(int interval);
+    array_compositor(int interval) { }
 
-    virtual int compose(float natural[], float stretch[], float shrink[],
-                        int component_count, int line_width, int breaks[]);
+    int compose(float natural[], float stretch[], float shrink[],
+                int component_count, int line_width, int breaks[]) override {
+        return 0;
+    }
     // ...
 };
 
