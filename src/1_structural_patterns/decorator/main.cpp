@@ -4,8 +4,8 @@
 #include "window.h"
 
 int main() {
-    window *w = new window;
-    text_view *tv = new text_view;
+    auto w = new window;
+    auto tv = new text_view;
 
     w->set_contents(new border_decorator(new scroll_decorator(tv), 1));
 }

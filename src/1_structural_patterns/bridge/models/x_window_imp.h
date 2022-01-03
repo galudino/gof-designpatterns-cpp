@@ -12,7 +12,7 @@ class x_window_imp : public window_imp {
 public:
     x_window_imp() = default;
 
-    virtual void device_rect(float x0, float y0, float x1, float y1);
+    void device_rect(float x0, float y0, float x1, float y1) override;
     // remainder of public interface...
 private:
     // lots of X window system-specific state, including:

@@ -7,12 +7,13 @@
 #include "floppy_disk.h"
 
 int main() {
-    cabinet *cab = new cabinet("PC Cabinet");
-    chassis *chs = new chassis("PC Chassis");
+    // TODO fix memory leaks, use smart pointers instead.
+    auto cab = new cabinet("PC Cabinet");
+    auto chs = new chassis("PC Chassis");
 
     cab->add(chs);
 
-    bus *b = new bus("MCA Bus");
+    auto b = new bus("MCA Bus");
     b->add(new card("16Mbs Token Ring"));
 
     chs->add(b);

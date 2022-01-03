@@ -10,13 +10,13 @@ class manipulator;
 
 class text_shape : public shape, private text_view {
 public:
-    text_shape();
+    std::pair<point, point> bounding_box() const override;
+    
+    bool empty() const override {
+        return text_view::empty();
+    }
 
-    virtual void bounding_box(point &bottom_left, point &top_right) const;
-
-    virtual bool empty() const { return text_view::empty(); }
-
-    virtual manipulator *create_manipulator() const {
+    manipulator *create_manipulator() const override {
         return new text_manipulator(this);
     }
 };

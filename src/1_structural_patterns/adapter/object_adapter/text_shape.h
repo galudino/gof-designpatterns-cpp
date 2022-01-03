@@ -11,18 +11,18 @@ class text_shape : public shape {
 public:
     text_shape(text_view *t) : m_text(t) { }
 
-    virtual void bounding_box(point &bottom_left, point &top_right) const;
+    std::pair<point, point> bounding_box() const override;
 
-    virtual bool empty() const {
+    bool empty() const {
         return m_text->empty();
     }
 
-    virtual manipulator *create_manipulator() const {
+    manipulator *create_manipulator() const override {
         return new text_manipulator(this);
     }
 
 private:
-    text_view *m_text;
+    text_view *m_text = nullptr;
 };
 
 #endif /* TEXTSHAPE_H */

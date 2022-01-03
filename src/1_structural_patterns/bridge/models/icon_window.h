@@ -6,10 +6,10 @@
 class icon_window : public window {
 public:
     // ...
-    virtual void draw_contents();
+    void draw_contents() override;
 
 private:
-    const char *m_bitmap_name;
+    const char *m_bitmap_name = nullptr;
 };
 
 #endif /* ICON_WINDOW_H */

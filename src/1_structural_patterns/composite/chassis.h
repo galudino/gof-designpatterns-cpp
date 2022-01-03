@@ -5,12 +5,21 @@
 
 class chassis : public composite_equipment {
 public:
-    chassis(const char *);
-    virtual ~chassis();
+    chassis(const char *name) : composite_equipment(name) { }
+    
+    virtual ~chassis() { }
 
-    virtual watt power();
-    virtual currency net_price();
-    virtual currency discount_price();
+    watt power() override {
+        return watt(4);
+    }
+    
+    currency net_price() override {
+        return currency(40);
+    }
+    
+    currency discount_price() override {
+        return currency(36);
+    }
 };
 
 #endif /* CHASSIS_H */

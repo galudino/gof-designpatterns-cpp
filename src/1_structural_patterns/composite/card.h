@@ -5,12 +5,21 @@
 
 class card : public equipment {
 public:
-    card(const char *);
-    virtual ~card();
+    card(const char *name) : equipment(name) { }
+    
+    virtual ~card() { }
 
-    virtual watt power();
-    virtual currency net_price();
-    virtual currency discount_price();
+    watt power() override {
+        return watt(3);
+    }
+    
+    currency net_price() override {
+        return currency(11);
+    }
+    
+    currency discount_price() override {
+        return currency(6);
+    }
 };
 
 #endif /* CARD_H */

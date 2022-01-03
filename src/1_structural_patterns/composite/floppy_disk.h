@@ -5,12 +5,20 @@
 
 class floppy_disk : public equipment {
 public:
-    floppy_disk(const char *);
-    virtual ~floppy_disk();
+    floppy_disk(const char *name) : equipment(name) { }
+    virtual ~floppy_disk() { }
 
-    virtual watt power();
-    virtual currency net_price();
-    virtual currency discount_price();
+    watt power() override {
+        return watt(10);
+    }
+    
+    currency net_price() override {
+        return currency(10);
+    }
+    
+    currency discount_price() override {
+        return currency(5);
+    }
 };
 
 #endif /* FLOPPY_DISK_H */

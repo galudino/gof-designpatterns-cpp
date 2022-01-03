@@ -6,19 +6,19 @@
 
 class composite_equipment : public equipment {
 public:
-    virtual ~composite_equipment();
+    virtual ~composite_equipment() { }
 
-    virtual watt power();
-    virtual currency net_price();
-    virtual currency discount_price();
+    watt power() override;
+    currency net_price() override;
+    currency discount_price() override;
 
-    virtual void add(equipment *);
-    virtual void remove(equipment *);
+    void add(equipment *e) override;
+    void remove(equipment *e) override;
     
-    virtual iterator<equipment *> *create_iterator();
+    iterator<equipment *> *create_iterator() override;
 
 protected:
-    composite_equipment(const char *);
+    composite_equipment(const char *name) : equipment(name) { }
 
 private:
     list<equipment *> m_equipment;

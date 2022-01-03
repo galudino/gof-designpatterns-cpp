@@ -15,7 +15,7 @@ const int GPI_ERROR = 1;
 class pm_window_imp : public window_imp {
 public:
     pm_window_imp() = default;
-    virtual void device_rect(float x0, float y0, float x1, float y1);
+    void device_rect(float x0, float y0, float x1, float y1) override;
 
     // remainder of public interface...
 private:
@@ -29,7 +29,7 @@ private:
 
     void gpi_stroke_path(HPS hps, long x, long y) { }
 
-    HPS m_hps;
+    HPS m_hps {};
 };
 
 #endif /* PM_WINDOW_IMP_H */

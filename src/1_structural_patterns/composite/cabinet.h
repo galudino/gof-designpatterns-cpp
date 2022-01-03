@@ -5,12 +5,21 @@
 
 class cabinet : public composite_equipment {
 public:
-    cabinet(const char *);
-    virtual ~cabinet();
+    cabinet(const char *name) : composite_equipment(name) { }
+    
+    virtual ~cabinet() { }
 
-    virtual watt power();
-    virtual currency net_price();
-    virtual currency discount_price();
+    watt power() override {
+        return watt(2);
+    }
+    
+    currency net_price() override {
+        return currency(30);
+    }
+    
+    currency discount_price() override {
+        return currency(26);
+    }
 };
 
 #endif /* CABINET_H */

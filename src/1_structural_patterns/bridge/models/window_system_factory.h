@@ -1,6 +1,8 @@
 #ifndef WINDOW_SYSTEM_FACTORY_H
 #define WINDOW_SYSTEM_FACTORY_H
 
+// TODO: Figure out how this works?
+
 class window_imp;
 
 class window_system_factory {

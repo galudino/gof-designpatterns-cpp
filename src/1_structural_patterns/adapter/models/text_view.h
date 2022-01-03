@@ -2,19 +2,18 @@
 #define TEXT_VIEW_H
 
 #include "coord.h"
+#include <utility>
 
 class text_view {
 public:
     text_view() { }
 
-    void origin(float &x, float &y) const {
-        x = m_x;
-        y = m_y;
+    std::pair<float, float> origin() const {
+        return std::make_pair(m_x, m_y);
     }
     
-    void extent(float &width, float &height) const {
-        width = m_width;
-        height = m_height;
+    std::pair<float, float> extent() const {
+        return std::make_pair(m_width, m_height);
     }
 
     virtual bool empty() const {

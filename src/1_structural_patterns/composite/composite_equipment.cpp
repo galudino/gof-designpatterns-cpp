@@ -2,10 +2,6 @@
 #include "equipment.h"
 #include "iterator.h"
 
-composite_equipment::composite_equipment(const char *name) : equipment(name) {}
-
-composite_equipment::~composite_equipment() {}
-
 watt composite_equipment::power() {
     iterator<equipment *> *i =
         create_iterator(); // ERRATUM: book had different iterator.

@@ -5,12 +5,21 @@
 
 class bus : public composite_equipment {
 public:
-    bus(const char *);
-    virtual ~bus();
+    bus(const char *name) : composite_equipment(name) { }
+    
+    virtual ~bus() { }
 
-    virtual watt power();
-    virtual currency net_price();
-    virtual currency discount_price();
+    virtual watt power() {
+        return watt(1);
+    }
+    
+    virtual currency net_price() {
+        return currency(20);
+    }
+    
+    virtual currency discount_price() {
+        return currency(16);
+    }
 };
 
 #endif /* BUS_H */

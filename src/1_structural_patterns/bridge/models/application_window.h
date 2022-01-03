@@ -6,7 +6,9 @@
 class application_window : public window {
 public:
     // ...
-    virtual void draw_contents();
+    void draw_contents() override {
+        view()->draw_on(this);
+    }
 };
 
 #endif /* APPLICATION_WINDOW_H */

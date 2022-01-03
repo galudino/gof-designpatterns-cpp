@@ -9,7 +9,7 @@ class window_imp;
 
 class window {
 public:
-    window(view *contents) : m_imp(nullptr), m_contents(contents) {}
+    window(view *contents) : m_contents(contents) {}
 
     // requests handled by window
     virtual void draw_contents() {}
@@ -30,14 +30,14 @@ public:
     virtual void draw_polygon(const point vertices[], int vertex_count) {}
     virtual void draw_text(const char *text, const point &pos) {}
 
-    view *get_view() { return m_contents; }
+    class view *view() { return m_contents; }
 
 protected:
-    window_imp *get_window_imp();
+    class window_imp *window_imp();
 
 private:
-    window_imp *m_imp;
-    view *m_contents; // the window's contents
+    class window_imp *m_imp = nullptr;
+    class view *m_contents = nullptr;   // the window's contents
 };
 
 #endif /* WINDOW_H */
