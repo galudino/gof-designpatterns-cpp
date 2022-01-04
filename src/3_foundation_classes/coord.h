@@ -1,12 +1,25 @@
 #ifndef COORD_H
 #define COORD_H
 
+#include <cmath>
+
 namespace coord {
 
-float min(float x, float y);
-float max(float x, float y);
-float abs(float x);
-int round(float x);
+constexpr float min(float x, float y) {
+    return std::fmin(x, y);
+}
+
+constexpr float max(float x, float y) {
+    return std::fmax(x, y);
+}
+
+constexpr float abs(float x) {
+    return std::fabs(x);
+}
+
+constexpr int round(float x) {
+    return std::floor(x + 0.5f);
+}
 
 } // namespace coord
 

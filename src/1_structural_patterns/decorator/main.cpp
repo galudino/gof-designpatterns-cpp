@@ -4,8 +4,10 @@
 #include "window.h"
 
 int main() {
-    auto w = new window;
-    auto tv = new text_view;
-
-    w->set_contents(new border_decorator(new scroll_decorator(tv), 1));
+    auto w = window();
+    auto tv = text_view();
+    auto sd = scroll_decorator(&tv);
+    auto bd = border_decorator(&sd, 1);
+    
+    w.set_contents(&bd);
 }

@@ -7,17 +7,14 @@
 #include "floppy_disk.h"
 
 int main() {
-    // TODO fix memory leaks, use smart pointers instead.
-    auto cab = new cabinet("PC Cabinet");
-    auto chs = new chassis("PC Chassis");
-
-    cab->add(chs);
-
-    auto b = new bus("MCA Bus");
-    b->add(new card("16Mbs Token Ring"));
-
-    chs->add(b);
-    chs->add(new floppy_disk("3.5in Floppy"));
-
-    std::cout << "The net price is " << chs->net_price() << std::endl;
+    auto cab = cabinet("PC Cabinet");
+    auto chs = chassis("PC Chassis");
+    
+    auto crd = card("16Mbs Token Ring");
+    chs.add(&crd);
+    
+    auto disk = floppy_disk("3.5in Floppy");
+    chs.add(&disk);
+    
+    std::cout << "The net price is " << chs.net_price() << std::endl;
 }

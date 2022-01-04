@@ -1,17 +1,19 @@
 #ifndef SIMPLE_COMMAND_H
 #define SIMPLE_COMMAND_H
 
-template <class Receiver>
+#include <functional>
+
+template <typename T>
 class simple_command : public command {
 public:
-    typedef void (Receiver::*action)();
+    using action = std::function<void(void)>;
     
-    simple_command(Receiver *r, action a) : m_action(a), m_receiver(r) {}
+    simple_command(T *r, action a) : m_action(a), m_receiver(r) {}
+    
     virtual void execute() { m_receiver->action(); }
-
 private:
     action m_action;
-    Receiver *m_receiver;
+    T *m_receiver = nullptr;
 };
 
 #endif // SIMPLE_COMMAND_H

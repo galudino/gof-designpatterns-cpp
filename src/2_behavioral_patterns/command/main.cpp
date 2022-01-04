@@ -2,14 +2,15 @@
 #include "simple_command.h"
 #include "my_class.h"
 
+#include <iostream>
+
 int main() {
-    my_class *receiver = new my_class;
-
-    // ...
-
-    command *c = new simple_command<my_class>(receiver, &my_class::action);
-
-    // ...
-
-    c->execute();
+    auto receiver = my_class();
+    auto c = simple_command<my_class>(&receiver, [] {
+        std::cout << "my action" << std::endl;
+    });
+    
+    c.execute();
+    
+    return 0;
 }

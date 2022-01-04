@@ -8,7 +8,7 @@ protected:
     widget(widget *parent, topic t = topic::NO_HELP_TOPIC);
 
 private:
-    widget *m_parent;
+    widget *m_parent = nullptr;
 };
 
 #endif /* WIDGET_H */

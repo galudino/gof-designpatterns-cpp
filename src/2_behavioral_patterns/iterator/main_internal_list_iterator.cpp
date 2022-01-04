@@ -3,13 +3,19 @@
 #include "print_n_employees.h"
 
 int main() {
-    list<employee *> *employees;
+    auto employees = list<employee *>();
+    
+    auto e1 = employee();
+    employees.append(&e1);
+    
+    auto e2 = employee();
+    employees.append(&e2);
+    
+    auto e3 = employee();
+    employees.append(&e3);
 
-    employees = new list<employee *>;
-    employees->append(new employee);
-    employees->append(new employee);
-    employees->append(new employee);
-
-    print_n_employees pa(employees, 10);
+    auto pa = print_n_employees(&employees, 10);
     pa.traverse();
+    
+    return 0;
 }

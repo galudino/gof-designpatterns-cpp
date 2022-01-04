@@ -5,37 +5,58 @@
 #include "skip_list.h"
 #include "skip_list_iterator.h"
 
-void PrintEmployees(iterator<employee *> &i) {
+void list_example();
+void skip_list_example();
+
+void print_employees(iterator<employee *> &i);
+
+int main() {
+    // EXAMPLE 1: list
+    list_example();
+    
+    // EXAMPLE 2: skip_list
+    skip_list_example();
+    
+    return 0;
+}
+
+void list_example() {
+    auto employees = list<employee *>();
+
+    auto e1 = employee();
+    employees.append(&e1);
+    
+    auto e2 = employee();
+    employees.append(&e2);
+    
+    auto e3 = employee();
+    employees.append(&e3);
+
+    auto forward = list_iterator<employee *>(&employees);
+    auto backward = reverse_list_iterator<employee *>(&employees);
+        
+    print_employees(forward);
+    print_employees(backward);
+}
+
+void skip_list_example() {
+    auto employees = skip_list<employee *>();
+    
+    auto e1 = employee();
+    employees.append(&e1);
+    
+    auto e2 = employee();
+    employees.append(&e2);
+    
+    auto e3 = employee();
+    employees.append(&e3);
+    
+    auto iterator = skip_list_iterator<employee *>(&employees);
+    print_employees(iterator);
+}
+
+void print_employees(iterator<employee *> &i) {
     for (i.first(); !i.done(); i.next()) {
         i.current_item()->print();
     }
-}
-
-int main() {
-    // EXAMPLE 1: List
-
-    list<employee *> *employees;
-
-    employees = new list<employee *>;
-    employees->append(new employee);
-    employees->append(new employee);
-    employees->append(new employee);
-
-    list_iterator<employee *> forward(employees);
-    reverse_list_iterator<employee *> backward(employees);
-
-    PrintEmployees(forward);
-    PrintEmployees(backward);
-
-    // EXAMPLE 2: SkipList
-
-    skip_list<employee *> *employees2;
-
-    employees2 = new skip_list<employee *>;
-    employees2->append(new employee);
-    employees2->append(new employee);
-    employees2->append(new employee);
-
-    skip_list_iterator<employee *> iterator(employees2);
-    PrintEmployees(iterator);
 }

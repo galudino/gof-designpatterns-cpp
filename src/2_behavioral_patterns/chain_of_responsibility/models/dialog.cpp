@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-dialog::dialog(help_handler *h, topic t) : widget(0) { set_handler(h, t); }
+dialog::dialog(help_handler *h, topic t) : widget(nullptr) { set_handler(h, t); }
 
 void dialog::handle_help() {
     if (has_help()) {

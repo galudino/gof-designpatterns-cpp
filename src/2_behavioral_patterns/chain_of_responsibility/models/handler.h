@@ -7,7 +7,7 @@ class print_request;
 
 class handler {
 public:
-    void handle_request(request *r);
+    virtual void handle_request(request *r);
 
 private:
     void handle_help(help_request *r);
